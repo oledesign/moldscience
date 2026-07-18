@@ -1,0 +1,396 @@
+/* ==========================================================================
+   Mold Science Technologies — Component layer
+   Everything here derives from tokens.css. Page rhythm:
+   sage hero → white → alternating sage/white → dark CTA → dark footer.
+   ========================================================================== */
+
+/* ---- Reset / base ------------------------------------------------------ */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--body-md-size);
+  line-height: var(--body-md-line);
+  color: var(--body);
+  background: var(--canvas);
+}
+img, video, svg { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+/* ---- Type -------------------------------------------------------------- */
+h1, h2, h3, h4 { margin: 0; color: var(--ink); }
+p { margin: 0 0 var(--sp-4); }
+p:last-child { margin-bottom: 0; }
+
+.display-mega, .display-xxl, .display-xl, .display-md {
+  font-family: var(--font-display);
+  font-weight: 800; /* heroes never lighter than 800 */
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.display-mega { font-size: var(--display-mega-size); line-height: var(--display-mega-line); }
+.display-xxl  { font-size: var(--display-xxl-size);  line-height: var(--display-xxl-line); }
+.display-xl   { font-size: var(--display-xl-size);   line-height: var(--display-xl-line); }
+.display-md   { font-size: var(--display-md-size);   line-height: var(--display-md-line); }
+.display-sm   { font-family: var(--font-body); font-weight: 600;
+                font-size: var(--display-sm-size); line-height: var(--display-sm-line); color: var(--ink); }
+
+.body-lg  { font-size: var(--body-lg-size); line-height: var(--body-lg-line); }
+.body-sm  { font-size: var(--body-sm-size); line-height: var(--body-sm-line); }
+.caption  { font-size: var(--caption-size); line-height: var(--caption-line); color: var(--mute); }
+.strong   { font-weight: 600; color: var(--ink); }
+
+.eyebrow {
+  font-size: var(--body-sm-size);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-deep);
+  margin: 0 0 var(--sp-4);
+}
+
+/* ---- Layout ------------------------------------------------------------ */
+.container {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--sp-5);
+}
+@media (min-width: 768px) { .container { padding-inline: var(--sp-8); } }
+
+.band { padding-block: var(--band-pad); }
+.band--white { background: var(--canvas); }
+.band--soft  { background: var(--canvas-soft); }
+.band--pale  { background: var(--primary-pale); color: var(--ink-deep); }
+.band--pale h1, .band--pale h2, .band--pale h3, .band--pale h4 { color: var(--ink-deep); }
+.band--dark  { background: var(--ink); color: var(--canvas); }
+.band--dark h1, .band--dark h2, .band--dark h3 { color: var(--primary); } /* conversion moment */
+@media (min-width: 768px) { .band--hero { padding-block: var(--sp-16); } }
+
+.grid { display: grid; gap: var(--sp-6); }
+@media (min-width: 768px) {
+  .grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .grid--3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---- Buttons ------------------------------------------------------------
+   primary = green pill / near-black label · secondary = sage pill
+   tertiary = white + 1px ink outline. All ~48px tall. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  min-height: var(--btn-height);
+  padding: 0 var(--sp-6);
+  border-radius: var(--radius-pill);
+  border: 0;
+  font-family: var(--font-body);
+  font-size: var(--button-size);
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 140ms ease-out, border-color 140ms ease-out;
+}
+.btn--primary { background: var(--primary); color: var(--on-primary); }
+.btn--primary:hover, .btn--primary:active { background: var(--primary-active); }
+.btn--secondary { background: var(--canvas-soft); color: var(--ink); }
+.btn--secondary:hover { background: var(--primary-neutral); }
+.btn--tertiary { background: var(--canvas); color: var(--ink); border: 1px solid var(--ink); }
+.btn--tertiary:hover { background: var(--canvas-soft); }
+/* on sage bands the secondary pill needs the white surface treatment */
+.band--soft .btn--secondary { background: var(--canvas); }
+.band--soft .btn--secondary:hover { background: var(--primary-neutral); }
+
+/* ---- Cards --------------------------------------------------------------
+   Elevation = surface contrast, not shadows. */
+.card {
+  background: var(--canvas);
+  border-radius: var(--radius-card);
+  padding: var(--card-pad);
+}
+.card--pale { background: var(--primary-pale); color: var(--ink-deep); }
+.card--pale h3, .card--pale h4, .card--pale .stat { color: var(--ink-deep); }
+.card--dark { background: var(--ink); color: var(--canvas); } /* promo moments only */
+.card--dark h3, .card--dark h4 { color: var(--primary); }
+.card--media { padding: 0; overflow: hidden; }
+.card--media .card-body { padding: var(--card-pad); }
+.card-figure { background: var(--canvas); display: grid; place-items: center; }
+.card-figure img { width: 100%; object-fit: contain; }
+
+.stat { font-family: var(--font-display); font-weight: 800; font-size: var(--display-md-size); line-height: var(--display-md-line); }
+
+/* ---- Badges -------------------------------------------------------------*/
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--radius-pill);
+  background: var(--primary-neutral);
+  color: var(--ink-deep);
+  font-size: var(--caption-size);
+  font-weight: 600;
+  line-height: var(--caption-line);
+}
+
+/* ---- Step rail — THE signature element -----------------------------------
+   Clean (On & Gone) → Protect (Gone 4 Good) → Lock (Spore Lock).
+   Green nodes joined by a connector. On product pages, `aria-current="step"`
+   marks "you are here": current node solid green, others outlined. */
+.steprail {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.steprail li {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-2);
+  padding-top: var(--sp-1);
+}
+.steprail .node {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--primary);
+  color: var(--on-primary);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--body-md-size);
+  position: relative;
+  z-index: 1;
+}
+/* connector */
+.steprail li + li::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--sp-1) + 20px);
+  right: calc(50% + 28px);
+  left: calc(-50% + 28px);
+  height: 2px;
+  background: var(--primary);
+}
+.steprail .step-name {
+  font-weight: 600;
+  color: var(--ink);
+  font-size: var(--body-md-size);
+  line-height: var(--body-md-line);
+}
+.steprail .step-product {
+  font-size: var(--caption-size);
+  line-height: var(--caption-line);
+  color: var(--mute);
+}
+/* dark surface variant */
+.band--dark .steprail .step-name, .card--dark .steprail .step-name { color: var(--canvas); }
+.band--dark .steprail li + li::before, .card--dark .steprail li + li::before { background: var(--primary); }
+/* "you are here" (compact, top of product pages) */
+.steprail--current li:not([aria-current]) .node {
+  background: transparent;
+  color: var(--mute);
+  box-shadow: inset 0 0 0 2px var(--mute);
+}
+.steprail--current li:not([aria-current]) .step-name { color: var(--mute); }
+.steprail--compact .node { width: 32px; height: 32px; font-size: var(--body-sm-size); }
+.steprail--compact li + li::before { top: calc(var(--sp-1) + 16px); right: calc(50% + 24px); left: calc(-50% + 24px); }
+.steprail--compact .step-product { display: none; }
+
+/* ---- Nav ---------------------------------------------------------------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--canvas);
+  border-bottom: 1px solid var(--canvas-soft);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-6);
+  min-height: 72px;
+}
+.nav-logo { display: flex; align-items: center; margin-right: auto; }
+.nav-logo img { height: 44px; width: auto; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--body-sm-size);
+  color: var(--ink);
+  padding: var(--sp-2) 0;
+}
+.nav-links a:hover { color: var(--ink-deep); text-decoration: underline; text-underline-offset: 4px; }
+.nav-links a[aria-current="page"] { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--primary); text-decoration-thickness: 2px; }
+.nav .btn { min-height: 40px; }
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  padding: var(--sp-2);
+  cursor: pointer;
+  color: var(--ink);
+}
+@media (max-width: 899px) {
+  .nav-toggle { display: inline-flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--canvas);
+    border-bottom: 1px solid var(--canvas-soft);
+    padding: var(--sp-2) var(--sp-5) var(--sp-5);
+  }
+  .nav-links a { display: block; padding: var(--sp-3) 0; }
+  .nav-links a.btn { display: inline-flex; margin-top: var(--sp-2); padding: 0 var(--sp-6); }
+  .nav.is-open .nav-links { display: flex; }
+}
+
+/* ---- Footer -------------------------------------------------------------- */
+.footer {
+  background: var(--ink);
+  color: var(--canvas-soft);
+  padding-block: var(--band-pad);
+  font-size: var(--body-sm-size);
+  line-height: var(--body-sm-line);
+}
+.footer-grid { display: grid; gap: var(--sp-8); }
+@media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
+.footer h4 {
+  color: var(--canvas);
+  font-size: var(--body-md-size);
+  font-weight: 600;
+  margin-bottom: var(--sp-3);
+}
+.footer ul { list-style: none; margin: 0; padding: 0; }
+.footer li { margin-bottom: var(--sp-2); }
+.footer a { color: var(--canvas-soft); text-decoration: none; }
+.footer a:hover { color: var(--canvas); text-decoration: underline; text-underline-offset: 3px; }
+.footer-logo { display: inline-block; margin-bottom: var(--sp-4); }
+.footer-logo img { height: 44px; width: auto; }
+.footer-meta {
+  margin-top: var(--sp-8);
+  padding-top: var(--sp-4);
+  border-top: 1px solid rgba(236, 238, 230, 0.2);
+  color: var(--mute);
+  font-size: var(--caption-size);
+}
+
+/* ---- Forms ---------------------------------------------------------------- */
+.field { display: grid; gap: var(--sp-1); margin-bottom: var(--sp-4); }
+.field label {
+  font-size: var(--body-sm-size);
+  font-weight: 600;
+  color: var(--ink);
+}
+.input, select.input, textarea.input {
+  width: 100%;
+  min-height: var(--btn-height);
+  padding: var(--sp-3) var(--sp-4);
+  border: 1px solid var(--mute);
+  border-radius: var(--radius-input);
+  background: var(--canvas);
+  font: inherit;
+  color: var(--ink);
+}
+textarea.input { min-height: 120px; resize: vertical; }
+.input:focus-visible { outline: 2px solid var(--ink); outline-offset: 0; border-color: var(--ink); }
+.input[aria-invalid="true"] { border-color: var(--negative); outline-color: var(--negative); }
+.field .error { color: var(--negative-deep); font-size: var(--caption-size); line-height: var(--caption-line); }
+.field .hint  { color: var(--mute); font-size: var(--caption-size); line-height: var(--caption-line); }
+
+/* ---- Download rows -------------------------------------------------------- */
+.download-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  background: var(--canvas);
+  border-radius: var(--radius-card);
+  padding: var(--sp-4) var(--card-pad);
+}
+.doc-icon {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-input);
+  display: grid;
+  place-items: center;
+  background: var(--canvas-soft);
+  color: var(--ink);
+}
+.doc-icon--sds { background: var(--warning); } /* safety chrome reads instantly as "safety document" */
+.download-row .doc-title { font-weight: 600; color: var(--ink); }
+.download-row .doc-meta { color: var(--mute); font-size: var(--caption-size); line-height: var(--caption-line); }
+.download-row .doc-text { flex: 1; min-width: 0; }
+.download-row .btn { flex: none; }
+@media (max-width: 560px) {
+  .download-row { flex-wrap: wrap; }
+  .download-row .doc-text { flex-basis: calc(100% - 48px - var(--sp-4)); }
+  .download-row .btn { width: 100%; }
+}
+
+/* ---- Callouts (status colors are status-only, never brand) ---------------- */
+.callout {
+  display: flex;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  border-radius: var(--radius-input);
+  font-size: var(--body-sm-size);
+  line-height: var(--body-sm-line);
+}
+.callout--warning  { background: var(--warning);  color: var(--ink); }
+.callout--positive { background: var(--positive); color: var(--canvas); }
+.callout--negative { background: var(--negative); color: var(--canvas); }
+
+/* ---- Video embed ----------------------------------------------------------- */
+.media-frame {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--ink);
+  aspect-ratio: 16 / 9;
+}
+.media-frame > video, .media-frame > iframe, .media-frame > .media-placeholder {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  object-fit: cover;
+}
+.media-placeholder {
+  display: grid;
+  place-items: center;
+  color: var(--canvas-soft);
+  font-size: var(--body-sm-size);
+  text-align: center;
+  padding: var(--sp-6);
+}
+
+/* ---- Utilities --------------------------------------------------------------*/
+.mt-0 { margin-top: 0; }
+.mb-2 { margin-bottom: var(--sp-2); }
+.mb-4 { margin-bottom: var(--sp-4); }
+.mb-6 { margin-bottom: var(--sp-6); }
+.mb-8 { margin-bottom: var(--sp-8); }
+.stack > * + * { margin-top: var(--sp-4); }
+.cluster { display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: center; }
+.center { text-align: center; }

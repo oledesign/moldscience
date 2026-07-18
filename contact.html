@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us — Mold Science Technologies</title>
+  <meta name="description" content="Have questions? We're here to help. Reach out to our team and we'll get back to you within 24 hours.">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/tokens.css">
+  <link rel="stylesheet" href="/styles/site.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/" aria-label="Mold Science Technologies — Home">
+        <img src="/assets/img/logo.svg" alt="Mold Science Technologies">
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/products">Products</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li><a href="/calculator">Profit Calculator</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a class="btn btn--primary" href="/contact" aria-current="page">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="band band--soft band--hero">
+      <div class="container">
+        <h1 class="display-xl mb-4">Contact Us</h1>
+        <p class="body-lg" style="max-width: 640px;">Have questions? We're here to help. Reach out to our team and we'll get back to you within 24 hours.</p>
+      </div>
+    </section>
+
+    <!-- Form + info -->
+    <section class="band band--white">
+      <div class="container grid grid--2" style="align-items: start;">
+        <div class="card" style="background: var(--canvas-soft);">
+          <h2 class="display-sm mb-2">Send Us a Message</h2>
+          <p class="mb-6">Fill out the form below and we'll get back to you as soon as possible.</p>
+          <form data-async action="/api/contact" method="post" data-success="Message sent. We'll get back to you within 24 hours.">
+            <div class="grid grid--2" style="gap: var(--sp-4);">
+              <div class="field"><label for="c-first">First Name *</label><input class="input" id="c-first" name="firstName" type="text" required autocomplete="given-name"></div>
+              <div class="field"><label for="c-last">Last Name *</label><input class="input" id="c-last" name="lastName" type="text" required autocomplete="family-name"></div>
+            </div>
+            <div class="field"><label for="c-email">Email *</label><input class="input" id="c-email" name="email" type="email" required autocomplete="email"></div>
+            <div class="field"><label for="c-phone">Phone</label><input class="input" id="c-phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="c-company">Company</label><input class="input" id="c-company" name="company" type="text" autocomplete="organization"></div>
+            <div class="field">
+              <label for="c-topic">Select a topic</label>
+              <select class="input" id="c-topic" name="topic">
+                <option>Product Information</option>
+                <option>Pricing &amp; Quotes</option>
+                <option>Technical Support</option>
+                <option>Training &amp; Workshops</option>
+                <option>Partnership Opportunities</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field"><label for="c-message">Message *</label><textarea class="input" id="c-message" name="message" required></textarea></div>
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+            <p class="form-status" hidden></p>
+            <button class="btn btn--primary" type="submit">Send Message</button>
+          </form>
+        </div>
+        <div class="stack">
+          <div class="card card--pale">
+            <h3 class="display-sm mb-4">Contact Information</h3>
+            <p class="mb-2"><span class="strong" style="color: var(--ink-deep);">Phone:</span> <a href="tel:+18887703130">(888) 770-3130</a></p>
+            <p class="mb-4">Mon-Fri, 8am-6pm EST</p>
+            <p><span class="strong" style="color: var(--ink-deep);">Email:</span> <a href="mailto:info@moldsciencetechnologies.com">info@moldsciencetechnologies.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick answers -->
+    <section class="band band--soft">
+      <div class="container center">
+        <h2 class="display-md mb-4">Looking for Quick Answers?</h2>
+        <p class="body-lg mb-6" style="max-width: 640px; margin-inline: auto;">Check out our resources section for product documentation, application guidelines, and frequently asked questions.</p>
+        <a class="btn btn--secondary" style="background: var(--canvas);" href="/resources">Browse Resources</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo"><img src="/assets/img/logo-light.svg" alt="Mold Science Technologies"></div>
+          <p>Professional mold remediation products designed to minimize labor and maximize profit for contractors.</p>
+          <ul>
+            <li><a href="tel:+18887703130">(888) 770-3130</a></li>
+            <li><a href="mailto:info@moldsciencetechnologies.com">info@moldsciencetechnologies.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Products</h4>
+          <ul>
+            <li><a href="/products/on-and-gone">OmniPro On &amp; Gone</a></li>
+            <li><a href="/products/gone-4-good">OmniPro Gone 4 Good</a></li>
+            <li><a href="/products/spore-lock">Spore Lock</a></li>
+            <li><a href="/products">All Products</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/resources#sds">Safety Data Sheets</a></li>
+            <li><a href="/resources#guides">Application Guidelines</a></li>
+            <li><a href="/resources">Product Information</a></li>
+            <li><a href="/calculator">Profit Calculator</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-meta">© 2026 Mold Science Technologies. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/site.js"></script>
+  <script>
+    // Preselect topic from ?topic= (used by "Request a Quote" buttons)
+    const topic = new URLSearchParams(location.search).get('topic');
+    if (topic) {
+      const sel = document.getElementById('c-topic');
+      if ([...sel.options].some(o => o.text === topic)) sel.value = topic;
+    }
+  </script>
+</body>
+</html>

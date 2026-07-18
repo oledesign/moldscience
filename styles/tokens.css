@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Mold Science Technologies — Design Tokens
+   Source of truth: MST-DESIGN.md v1.0 (locked). No new colors, no new fonts.
+   ========================================================================== */
+
+:root {
+  /* ---- Color ---- */
+  --primary:         #8EB42E; /* logo green — CTAs + step rail ONLY */
+  --on-primary:      #0e0f0c;
+  --primary-active:  #A6CC48;
+  --primary-neutral: #CFE39A; /* badges, step markers */
+  --primary-pale:    #EEF4DA; /* pale green feature-card bg */
+
+  --ink:       #0e0f0c; /* headlines, dark bands, footer */
+  --ink-deep:  #26350A; /* text on primary-pale surfaces */
+  --body:      #454745;
+  --mute:      #868685;
+
+  --canvas:      #ffffff;
+  --canvas-soft: #ECEEE6; /* sage band */
+
+  --positive:      #2ead4b;
+  --positive-deep: #054d28;
+  --warning:       #ffd11a;
+  --warning-deep:  #b86700;
+  --negative:      #d03238;
+  --negative-deep: #a72027;
+
+  /* ---- Typography ---- */
+  --font-display: "Manrope", "Inter", sans-serif; /* weight 800 heroes */
+  --font-body:    "Inter", sans-serif;            /* 400 / 600 */
+
+  /* Scale (Wise, unchanged) — fluid floor for small screens */
+  --display-mega-size: clamp(3.25rem, 1rem + 9vw, 7.875rem);   /* → 126 */
+  --display-mega-line: 0.85;                                    /* 107/126 */
+  --display-xxl-size:  clamp(2.875rem, 1rem + 7vw, 6rem);      /* → 96 */
+  --display-xxl-line:  0.854;                                   /* 82/96 */
+  --display-xl-size:   clamp(2.25rem, 1.25rem + 4vw, 4rem);    /* → 64 */
+  --display-xl-line:   0.844;                                   /* 54/64 */
+  --display-md-size:   clamp(1.75rem, 1.35rem + 1.6vw, 2.5rem);/* → 40 */
+  --display-md-line:   0.85;                                    /* 34/40 */
+  --display-sm-size:   clamp(1.5rem, 1.3rem + 0.8vw, 2rem);    /* → 32, Inter 600 */
+  --display-sm-line:   1.125;
+
+  --body-lg-size: 1.25rem;   --body-lg-line: 1.5;   /* 20/30 lead */
+  --body-md-size: 1rem;      --body-md-line: 1.5;   /* 16/24 */
+  --body-sm-size: 0.875rem;  --body-sm-line: 1.43;  /* 14/20 */
+  --caption-size: 0.75rem;   --caption-line: 1.333; /* 12/16 */
+  --button-size:  1rem;      /* 16 / 600 */
+
+  /* ---- Shape ---- */
+  --radius-card:  24px;
+  --radius-input: 12px;
+  --radius-pill:  9999px;
+
+  /* ---- Spacing (base 4px) ---- */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px;
+  --sp-12: 48px; --sp-16: 64px; --sp-20: 80px;
+
+  --band-pad: var(--sp-12);   /* bands 48px vertical */
+  --card-pad: var(--sp-6);    /* card interiors 24px */
+  --btn-height: 48px;
+
+  --container: 1200px;
+}

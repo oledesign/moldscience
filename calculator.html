@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profit Calculator — Mold Science Technologies</title>
+  <meta name="description" content="Our cost based, profit building APP shows you how to reliably and easily hit profit targets on mold removal jobs. Free to our customers.">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/tokens.css">
+  <link rel="stylesheet" href="/styles/site.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/" aria-label="Mold Science Technologies — Home">
+        <img src="/assets/img/logo.svg" alt="Mold Science Technologies">
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/products">Products</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li><a href="/calculator" aria-current="page">Profit Calculator</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a class="btn btn--primary" href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="band band--soft band--hero">
+      <div class="container">
+        <p class="eyebrow">Profit Building App</p>
+        <h1 class="display-xl mb-4">Are you hitting your Numbers?</h1>
+        <p class="body-lg" style="max-width: 640px;">You need to start with a firm understanding of real costs</p>
+      </div>
+    </section>
+
+    <!-- Cost reality checklist -->
+    <section class="band band--white">
+      <div class="container">
+        <div class="card" style="background: var(--canvas-soft);">
+          <ul class="grid grid--2" style="list-style: none; margin: 0; padding: 0; gap: var(--sp-4);">
+            <li class="cluster" style="flex-wrap: nowrap; align-items: flex-start;"><span class="badge" aria-hidden="true">?</span><span>What are you paying for your mold removal chemicals</span></li>
+            <li class="cluster" style="flex-wrap: nowrap; align-items: flex-start;"><span class="badge" aria-hidden="true">?</span><span>How do you account for the van full of PPE, Poly, Tape, and all of the consumables that go into every job</span></li>
+            <li class="cluster" style="flex-wrap: nowrap; align-items: flex-start;"><span class="badge" aria-hidden="true">?</span><span>What is your labor rate? What are your real costs for people to do the job</span></li>
+            <li class="cluster" style="flex-wrap: nowrap; align-items: flex-start;"><span class="badge" aria-hidden="true">?</span><span>What is your target profit margin? What is your real profit margin?</span></li>
+            <li class="cluster" style="flex-wrap: nowrap; align-items: flex-start;"><span class="badge" aria-hidden="true">?</span><span>What is your sq ft price</span></li>
+            <li class="cluster" style="flex-wrap: nowrap; align-items: flex-start;"><span class="badge" aria-hidden="true">?</span><span>What is the total quote for the job</span></li>
+            <li class="cluster" style="flex-wrap: nowrap; align-items: flex-start;"><span class="badge" aria-hidden="true">?</span><span>How can you compare one day jobs with two day job?</span></li>
+            <li class="cluster" style="flex-wrap: nowrap; align-items: flex-start;"><span class="badge" aria-hidden="true">?</span><span>If you have multiple estimators, how do you ensure they will hit you profit numbers?  The APP can be a great discussion tool for your teams</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview video -->
+    <section class="band band--soft">
+      <div class="container">
+        <div class="card card--media" style="max-width: 760px; margin-inline: auto;">
+          <div class="media-frame" style="border-radius: 0;">
+            <iframe src="https://player.vimeo.com/video/818915864" title="Short overview of the profit building app" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="card-body">
+            <p class="body-sm center" style="color: var(--mute);">A short overview of the profit building app.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Email gate -->
+    <section class="band band--pale">
+      <div class="container grid grid--2" style="align-items: center;">
+        <div>
+          <h2 class="display-md mb-4">The app does all of the above and more. And we provide it free to our customers!</h2>
+        </div>
+        <div class="card">
+          <form data-async action="/api/get-app" method="post" data-success="You're all set — check your inbox for the app install link and best-practices booklet.">
+            <div class="field"><label for="ga-name">Name *</label><input class="input" id="ga-name" name="name" type="text" required autocomplete="name"></div>
+            <div class="field"><label for="ga-email">Email *</label><input class="input" id="ga-email" name="email" type="email" required autocomplete="email"></div>
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+            <p class="form-status" hidden></p>
+            <button class="btn btn--primary" type="submit">Get the Free App</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conversion moment -->
+    <section class="band band--dark">
+      <div class="container center">
+        <h2 class="display-md mb-6">Ready to Maximize Your Profits?</h2>
+        <div class="cluster" style="justify-content: center;">
+          <a class="btn btn--primary" href="/products">View Products</a>
+          <a class="btn btn--tertiary" href="/contact">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo"><img src="/assets/img/logo-light.svg" alt="Mold Science Technologies"></div>
+          <p>Professional mold remediation products designed to minimize labor and maximize profit for contractors.</p>
+          <ul>
+            <li><a href="tel:+18887703130">(888) 770-3130</a></li>
+            <li><a href="mailto:info@moldsciencetechnologies.com">info@moldsciencetechnologies.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Products</h4>
+          <ul>
+            <li><a href="/products/on-and-gone">OmniPro On &amp; Gone</a></li>
+            <li><a href="/products/gone-4-good">OmniPro Gone 4 Good</a></li>
+            <li><a href="/products/spore-lock">Spore Lock</a></li>
+            <li><a href="/products">All Products</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/resources#sds">Safety Data Sheets</a></li>
+            <li><a href="/resources#guides">Application Guidelines</a></li>
+            <li><a href="/resources">Product Information</a></li>
+            <li><a href="/calculator">Profit Calculator</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-meta">© 2026 Mold Science Technologies. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/site.js"></script>
+</body>
+</html>

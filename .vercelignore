@@ -1,0 +1,19 @@
+# deploy only the site — keep source docs, originals, and specs out (root-anchored)
+/CLAUDE.md
+/copy-source.md
+/MST-DESIGN.md
+/MST-SITE-PLAN.md
+/.claude
+/mst-logo.svg
+/logo-Ch9QSBPE.svg
+/*.pdf
+/*.docx
+/*.DOCX
+/*.jpg
+/*.png
+/*.mp4
+/Sporelock Instructions and Safety FRENCH.DOCX
+/Sporelock Instructions and Safety MSTI (1).docx
+/On & Gone - 60 Second Mold Removal Challenge - smaller.mp4
+/assets/img/silane-surface-4k.png
+/assets/img/microbial-action-4k.png
