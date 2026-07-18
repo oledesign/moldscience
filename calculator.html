@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles/tokens.css">
   <link rel="stylesheet" href="/styles/site.css">
+  <link rel="stylesheet" href="/styles/motion.css">
 </head>
 <body>
 
@@ -36,17 +37,17 @@
     <!-- Hero -->
     <section class="band band--soft band--hero">
       <div class="container">
-        <p class="eyebrow">Profit Building App</p>
-        <h1 class="display-xl mb-4">Are you hitting your Numbers?</h1>
-        <p class="body-lg" style="max-width: 640px;">You need to start with a firm understanding of real costs</p>
+        <p data-reveal class="eyebrow">Profit Building App</p>
+        <h1 data-reveal class="display-xl mb-4">Are you hitting your Numbers?</h1>
+        <p data-reveal class="body-lg" style="max-width: 640px;">You need to start with a firm understanding of real costs</p>
       </div>
     </section>
 
     <!-- Cost reality checklist -->
     <section class="band band--white">
       <div class="container">
-        <div class="card" style="background: var(--canvas-soft);">
-          <ul class="grid grid--2" style="list-style: none; margin: 0; padding: 0; gap: var(--sp-4);">
+        <div data-reveal class="card" style="background: var(--canvas-soft);">
+          <ul data-reveal-group class="grid grid--2" style="list-style: none; margin: 0; padding: 0; gap: var(--sp-4);">
             <li class="cluster" style="flex-wrap: nowrap; align-items: flex-start;"><span class="badge" aria-hidden="true">?</span><span>What are you paying for your mold removal chemicals</span></li>
             <li class="cluster" style="flex-wrap: nowrap; align-items: flex-start;"><span class="badge" aria-hidden="true">?</span><span>How do you account for the van full of PPE, Poly, Tape, and all of the consumables that go into every job</span></li>
             <li class="cluster" style="flex-wrap: nowrap; align-items: flex-start;"><span class="badge" aria-hidden="true">?</span><span>What is your labor rate? What are your real costs for people to do the job</span></li>
@@ -63,11 +64,11 @@
     <!-- Overview video -->
     <section class="band band--soft">
       <div class="container">
-        <div class="card card--media" style="max-width: 760px; margin-inline: auto;">
+        <div data-reveal class="card card--media" style="max-width: 760px; margin-inline: auto;">
           <div class="media-frame" style="border-radius: 0;">
             <iframe src="https://player.vimeo.com/video/818915864" title="Short overview of the profit building app" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
           </div>
-          <div class="card-body">
+          <div data-reveal class="card-body">
             <p class="body-sm center" style="color: var(--mute);">A short overview of the profit building app.</p>
           </div>
         </div>
@@ -76,11 +77,11 @@
 
     <!-- Email gate -->
     <section class="band band--pale">
-      <div class="container grid grid--2" style="align-items: center;">
+      <div data-reveal-group class="container grid grid--2" style="align-items: center;">
         <div>
-          <h2 class="display-md mb-4">The app does all of the above and more. And we provide it free to our customers!</h2>
+          <h2 data-reveal class="display-md mb-4">The app does all of the above and more. And we provide it free to our customers!</h2>
         </div>
-        <div class="card">
+        <div data-reveal class="card">
           <form data-async action="/api/get-app" method="post" data-success="You're all set — check your inbox for the app install link and best-practices booklet.">
             <div class="field"><label for="ga-name">Name *</label><input class="input" id="ga-name" name="name" type="text" required autocomplete="name"></div>
             <div class="field"><label for="ga-email">Email *</label><input class="input" id="ga-email" name="email" type="email" required autocomplete="email"></div>
@@ -95,7 +96,7 @@
     <!-- Conversion moment -->
     <section class="band band--dark">
       <div class="container center">
-        <h2 class="display-md mb-6">Ready to Maximize Your Profits?</h2>
+        <h2 data-reveal class="display-md mb-6">Ready to Maximize Your Profits?</h2>
         <div class="cluster" style="justify-content: center;">
           <a class="btn btn--primary" href="/products">View Products</a>
           <a class="btn btn--tertiary" href="/contact">Get in Touch</a>
@@ -145,6 +146,7 @@
     </div>
   </footer>
 
+  <script src="/js/motion.js" defer></script>
   <script src="/js/site.js"></script>
 </body>
 </html>

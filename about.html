@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles/tokens.css">
   <link rel="stylesheet" href="/styles/site.css">
+  <link rel="stylesheet" href="/styles/motion.css">
 </head>
 <body>
 
@@ -36,29 +37,29 @@
     <!-- Hero -->
     <section class="band band--soft band--hero">
       <div class="container">
-        <h1 class="display-xl mb-4">About MoldScience</h1>
-        <p class="body-lg" style="max-width: 640px;">We're on a mission to help mold remediation contractors work smarter, not harder. Our professional-grade products are designed to minimize labor and maximize profit.</p>
+        <h1 data-reveal class="display-xl mb-4">About MoldScience</h1>
+        <p data-reveal class="body-lg" style="max-width: 640px;">We're on a mission to help mold remediation contractors work smarter, not harder. Our professional-grade products are designed to minimize labor and maximize profit.</p>
       </div>
     </section>
 
     <!-- Story + stats -->
     <section class="band band--white">
       <div class="container">
-        <h2 class="display-md mb-4">Built by Contractors, for Contractors</h2>
+        <h2 data-reveal class="display-md mb-4">Built by Contractors, for Contractors</h2>
         <div style="max-width: 640px;" class="mb-8">
           <p>MoldScience was founded by a team of experienced mold remediation professionals who were frustrated with the products available on the market.</p>
           <p>We set out to create a better solution — professional-grade products that actually work, save time, and help contractors increase their profits.</p>
         </div>
-        <div class="grid grid--3">
-          <div class="card card--pale">
+        <div data-reveal-group class="grid grid--3">
+          <div data-reveal class="card card--pale">
             <p class="stat">10+</p>
             <p>Years in Business</p>
           </div>
-          <div class="card card--pale">
+          <div data-reveal class="card card--pale">
             <p class="stat">1,000s</p>
             <p>of Happy Customers</p>
           </div>
-          <div class="card card--pale">
+          <div data-reveal class="card card--pale">
             <p class="stat">Tens of Thousands</p>
             <p>of successful mold remediation projects</p>
           </div>
@@ -69,18 +70,18 @@
     <!-- Values -->
     <section class="band band--soft">
       <div class="container">
-        <h2 class="display-md mb-4">Our Values</h2>
-        <p class="body-lg mb-8" style="max-width: 640px;">These principles guide everything we do at MoldScience.</p>
-        <div class="grid grid--3">
-          <div class="card">
+        <h2 data-reveal class="display-md mb-4">Our Values</h2>
+        <p data-reveal class="body-lg mb-8" style="max-width: 640px;">These principles guide everything we do at MoldScience.</p>
+        <div data-reveal-group class="grid grid--3">
+          <div data-reveal class="card">
             <h3 class="display-sm mb-2">Contractor-Focused</h3>
             <p>Every product is designed with the working contractor in mind. We understand your challenges and build solutions that work.</p>
           </div>
-          <div class="card">
+          <div data-reveal class="card">
             <h3 class="display-sm mb-2">Partnership Approach</h3>
             <p>We see our customers as partners. Your success is our success, and we're here to support you every step of the way.</p>
           </div>
-          <div class="card">
+          <div data-reveal class="card">
             <h3 class="display-sm mb-2">Quality First</h3>
             <p>We never compromise on quality. Our products are rigorously tested and backed by industry-leading guarantees.</p>
           </div>
@@ -91,8 +92,8 @@
     <!-- Conversion moment -->
     <section class="band band--dark">
       <div class="container center">
-        <h2 class="display-md mb-4">Ready to Join the MoldScience Family?</h2>
-        <p class="body-lg mb-6" style="max-width: 620px; margin-inline: auto;">Connect with our team to learn how MoldScience products can transform your business.</p>
+        <h2 data-reveal class="display-md mb-4">Ready to Join the MoldScience Family?</h2>
+        <p data-reveal class="body-lg mb-6" style="max-width: 620px; margin-inline: auto;">Connect with our team to learn how MoldScience products can transform your business.</p>
         <div class="cluster" style="justify-content: center;">
           <a class="btn btn--primary" href="/contact">Contact Us</a>
           <a class="btn btn--tertiary" href="/products">View Products</a>
@@ -142,6 +143,7 @@
     </div>
   </footer>
 
+  <script src="/js/motion.js" defer></script>
   <script src="/js/site.js"></script>
 </body>
 </html>

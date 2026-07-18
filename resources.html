@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles/tokens.css">
   <link rel="stylesheet" href="/styles/site.css">
+  <link rel="stylesheet" href="/styles/motion.css">
 </head>
 <body>
 
@@ -36,16 +37,16 @@
     <!-- Hero -->
     <section class="band band--soft band--hero">
       <div class="container">
-        <h1 class="display-xl mb-4">Resource Library</h1>
-        <p class="body-lg" style="max-width: 640px;">Download safety data sheets, application guides, and technical documents for all MoldScience products.</p>
+        <h1 data-reveal class="display-xl mb-4">Resource Library</h1>
+        <p data-reveal class="body-lg" style="max-width: 640px;">Download safety data sheets, application guides, and technical documents for all MoldScience products.</p>
       </div>
     </section>
 
     <!-- SDS -->
     <section class="band band--white" id="sds">
       <div class="container">
-        <h2 class="display-md mb-8">SDS</h2>
-        <div class="grid grid--2" style="gap: var(--sp-4);">
+        <h2 data-reveal class="display-md mb-8">SDS</h2>
+        <div data-reveal-group class="grid grid--2" style="gap: var(--sp-4);">
           <div class="download-row" style="background: var(--canvas-soft);">
             <span class="doc-icon doc-icon--sds" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 2v6h6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
@@ -133,8 +134,8 @@
     <!-- Application Guides -->
     <section class="band band--soft" id="guides">
       <div class="container">
-        <h2 class="display-md mb-8">Application Guides</h2>
-        <div class="grid grid--2" style="gap: var(--sp-4);">
+        <h2 data-reveal class="display-md mb-8">Application Guides</h2>
+        <div data-reveal-group class="grid grid--2" style="gap: var(--sp-4);">
           <div class="download-row">
             <span class="doc-icon" style="background: var(--canvas-soft);" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 2v6h6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
@@ -182,8 +183,8 @@
     <!-- Conversion moment -->
     <section class="band band--dark">
       <div class="container center">
-        <h2 class="display-md mb-4">Need a Document Not Listed Here?</h2>
-        <p class="body-lg mb-6" style="max-width: 620px; margin-inline: auto;">Contact us and we'll send you exactly what you need.</p>
+        <h2 data-reveal class="display-md mb-4">Need a Document Not Listed Here?</h2>
+        <p data-reveal class="body-lg mb-6" style="max-width: 620px; margin-inline: auto;">Contact us and we'll send you exactly what you need.</p>
         <a class="btn btn--primary" href="/contact">Contact Us</a>
       </div>
     </section>
@@ -230,6 +231,7 @@
     </div>
   </footer>
 
+  <script src="/js/motion.js" defer></script>
   <script src="/js/site.js"></script>
 </body>
 </html>

@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles/tokens.css">
   <link rel="stylesheet" href="/styles/site.css">
+  <link rel="stylesheet" href="/styles/motion.css">
   <style>
     /* styleguide-only chrome */
     .sg-swatch { border-radius: var(--radius-input); overflow: hidden; border: 1px solid var(--canvas-soft); }
@@ -44,9 +45,9 @@
   <!-- ======================= HERO BAND (sage) ======================= -->
   <section class="band band--soft band--hero">
     <div class="container">
-      <p class="eyebrow">Styleguide · Session 1 Foundation</p>
-      <h1 class="display-xl mb-4">Minimize Labor. Maximize Profit.</h1>
-      <p class="body-lg mb-6" style="max-width: 640px;">This page renders every token and component in MST-DESIGN.md. Sample copy is placeholder or pulled verbatim from the content doc — real pages are built in Sessions 2–4.</p>
+      <p data-reveal class="eyebrow">Styleguide · Session 1 Foundation</p>
+      <h1 data-reveal class="display-xl mb-4">Minimize Labor. Maximize Profit.</h1>
+      <p data-reveal class="body-lg mb-6" style="max-width: 640px;">This page renders every token and component in MST-DESIGN.md. Sample copy is placeholder or pulled verbatim from the content doc — real pages are built in Sessions 2–4.</p>
       <div class="cluster">
         <a class="btn btn--primary" href="#buttons">Primary CTA</a>
         <a class="btn btn--tertiary" href="#type">Tertiary Action</a>
@@ -58,7 +59,7 @@
   <section class="band band--white" id="color">
     <div class="container">
       <p class="sg-section-label">Color tokens</p>
-      <h2 class="display-md mb-6">Color</h2>
+      <h2 data-reveal class="display-md mb-6">Color</h2>
       <div class="sg-grid">
         <div class="sg-swatch"><div class="chip" style="background:#8EB42E"></div><div class="label"><strong>primary</strong> #8EB42E — CTAs + step rail only</div></div>
         <div class="sg-swatch"><div class="chip" style="background:#A6CC48"></div><div class="label"><strong>primary-active</strong> #A6CC48</div></div>
@@ -80,14 +81,14 @@
   <section class="band band--soft" id="type">
     <div class="container">
       <p class="sg-section-label">Typography — Manrope 800 display · Inter 400/600 body</p>
-      <h2 class="display-md mb-6">Type scale</h2>
+      <h2 data-reveal class="display-md mb-6">Type scale</h2>
       <div class="stack">
         <div><p class="caption mb-2">display-mega · 126/107</p><p class="display-mega">Profit.</p></div>
         <div><p class="caption mb-2">display-xxl · 96/82</p><p class="display-xxl">On &amp; Gone</p></div>
         <div><p class="caption mb-2">display-xl · 64/54 — page heroes</p><p class="display-xl">Minimize Labor. Maximize Profit.</p></div>
         <div><p class="caption mb-2">display-md · 40/34 — section heads</p><p class="display-md">Why Contractors Choose MoldScience</p></div>
         <div><p class="caption mb-2">display-sm · 32 Inter 600 — card heads</p><p class="display-sm">Crystal Shield Technology</p></div>
-        <div><p class="caption mb-2">body-lg · 20/30 — lead paragraphs</p><p class="body-lg" style="max-width:640px">Professional-grade mold remediation products trusted by thousands of contractors.</p></div>
+        <div><p class="caption mb-2">body-lg · 20/30 — lead paragraphs</p><p data-reveal class="body-lg" style="max-width:640px">Professional-grade mold remediation products trusted by thousands of contractors.</p></div>
         <div><p class="caption mb-2">body-md · 16/24 — default</p><p style="max-width:640px">Our products are engineered specifically for professional contractors who demand efficiency and results. <span class="strong">Strong runs use Inter 600.</span></p></div>
         <div><p class="caption mb-2">body-sm · 14/20 — captions under media</p><p class="body-sm" style="max-width:640px">Gone 4 Good 10-year warranty certificate, front page.</p></div>
         <div><p class="caption mb-2">caption · 12/16 — fine print</p><p class="caption">Mon–Fri, 8am–6pm EST</p></div>
@@ -99,14 +100,14 @@
   <section class="band band--white" id="buttons">
     <div class="container">
       <p class="sg-section-label">Buttons — 48px pills, green never sits on green</p>
-      <h2 class="display-md mb-6">Buttons</h2>
+      <h2 data-reveal class="display-md mb-6">Buttons</h2>
       <div class="cluster mb-6">
         <a class="btn btn--primary" href="#">View Products</a>
         <a class="btn btn--secondary" href="#">Profit Calculator</a>
         <a class="btn btn--tertiary" href="#">Learn More</a>
       </div>
       <p class="caption mb-4">Secondary on a sage band swaps to a white pill:</p>
-      <div class="card" style="background: var(--canvas-soft); border-radius: var(--radius-card);">
+      <div data-reveal class="card" style="background: var(--canvas-soft); border-radius: var(--radius-card);">
         <div class="band--soft cluster" style="background:none">
           <a class="btn btn--primary" href="#">Get the Free App</a>
           <a class="btn btn--secondary" style="background: var(--canvas);" href="#">Browse Resources</a>
@@ -119,7 +120,7 @@
   <section class="band band--soft" id="steprail">
     <div class="container">
       <p class="sg-section-label">Signature element — the 3-Step System rail</p>
-      <h2 class="display-md mb-6">Step rail</h2>
+      <h2 data-reveal class="display-md mb-6">Step rail</h2>
 
       <p class="caption mb-4">Full rail (Home, on sage):</p>
       <ol class="steprail mb-8" aria-label="The MoldScience 3-step system">
@@ -129,7 +130,7 @@
       </ol>
 
       <p class="caption mb-4">"You are here" (top of each product page — current step solid, others outlined):</p>
-      <div class="card mb-8">
+      <div data-reveal class="card mb-8">
         <ol class="steprail steprail--current steprail--compact" aria-label="You are at step 2 of the 3-step system">
           <li><span class="node">1</span><span class="step-name">Clean</span></li>
           <li aria-current="step"><span class="node">2</span><span class="step-name">Protect</span></li>
@@ -138,7 +139,7 @@
       </div>
 
       <p class="caption mb-4">On ink (dark promo card):</p>
-      <div class="card card--dark">
+      <div data-reveal class="card card--dark">
         <ol class="steprail" aria-label="The MoldScience 3-step system">
           <li><span class="node">1</span><span class="step-name">Clean</span><span class="step-product">OmniPro On &amp; Gone</span></li>
           <li><span class="node">2</span><span class="step-name">Protect</span><span class="step-product">OmniPro Gone 4 Good</span></li>
@@ -152,28 +153,28 @@
   <section class="band band--white" id="cards">
     <div class="container">
       <p class="sg-section-label">Cards — white on sage, pale-green features, dark promo</p>
-      <h2 class="display-md mb-6">Cards</h2>
-      <div class="grid grid--3 mb-6">
-        <div class="card card--media" style="background: var(--canvas-soft);">
-          <div class="card-figure" style="background: var(--canvas); aspect-ratio: 1;">
+      <h2 data-reveal class="display-md mb-6">Cards</h2>
+      <div data-reveal-group class="grid grid--3 mb-6">
+        <div data-reveal class="card card--media" style="background: var(--canvas-soft);">
+          <div data-reveal class="card-figure" style="background: var(--canvas); aspect-ratio: 1;">
             <img src="/assets/img/product-onandgone.jpg" alt="OmniPro On &amp; Gone bottle" loading="lazy" style="max-height: 100%; object-fit: contain;">
           </div>
-          <div class="card-body">
+          <div data-reveal class="card-body">
             <h3 class="display-sm mb-2">OmniPro On &amp; Gone</h3>
             <p class="body-sm mb-4">Blast away mold stains fast. A powerful, contractor-grade cleaner that removes surface mold in a single application.</p>
             <a class="btn btn--tertiary" href="#">Learn More</a>
           </div>
         </div>
-        <div class="card card--pale">
+        <div data-reveal class="card card--pale">
           <h3 class="display-sm mb-2">Maximize Profit</h3>
           <p class="body-sm">Lower labor costs + premium results = higher margins. Our calculator shows your exact profit potential.</p>
         </div>
-        <div class="card card--pale">
+        <div data-reveal class="card card--pale">
           <p class="stat">10+</p>
           <p class="body-sm">Years in Business</p>
         </div>
       </div>
-      <div class="card card--dark">
+      <div data-reveal class="card card--dark">
         <h3 class="display-md mb-2">Ready to Increase Your Profits?</h3>
         <p class="mb-6" style="max-width: 560px;">Join thousands of professional contractors who trust MoldScience for their mold remediation needs.</p>
         <a class="btn btn--primary" href="#">Contact Us</a>
@@ -185,22 +186,22 @@
   <section class="band band--soft" id="media">
     <div class="container">
       <p class="sg-section-label">Media cards &amp; download rows</p>
-      <h2 class="display-md mb-6">Media &amp; documents</h2>
-      <div class="grid grid--2 mb-6">
-        <div class="card card--media">
+      <h2 data-reveal class="display-md mb-6">Media &amp; documents</h2>
+      <div data-reveal-group class="grid grid--2 mb-6">
+        <div data-reveal class="card card--media">
           <div class="media-frame" style="border-radius: 0;">
             <video controls preload="metadata" src="/assets/video/onandgone-challenge-60s.mp4"></video>
           </div>
-          <div class="card-body">
+          <div data-reveal class="card-body">
             <h3 class="display-sm mb-2">Take the On &amp; Gone Challenge</h3>
             <p class="body-sm">Watch our contractors go head-to-head with the toughest stains. See the results on video.</p>
           </div>
         </div>
-        <div class="card card--media">
+        <div data-reveal class="card card--media">
           <div class="media-frame" style="border-radius: 0;">
             <div class="media-placeholder">Vimeo embed placeholder — On &amp; Gone 1-minute video (URL pending)</div>
           </div>
-          <div class="card-body">
+          <div data-reveal class="card-body">
             <h3 class="display-sm mb-2">Video placeholder state</h3>
             <p class="body-sm">Used until the Vimeo URLs are supplied.</p>
           </div>
@@ -235,10 +236,10 @@
   <section class="band band--white" id="forms">
     <div class="container">
       <p class="sg-section-label">Forms — 12px inputs · status colors are status-only</p>
-      <h2 class="display-md mb-6">Forms &amp; status</h2>
-      <div class="grid grid--2">
-        <div class="card" style="background: var(--canvas-soft);">
-          <div class="grid grid--2" style="gap: var(--sp-4);">
+      <h2 data-reveal class="display-md mb-6">Forms &amp; status</h2>
+      <div data-reveal-group class="grid grid--2">
+        <div data-reveal class="card" style="background: var(--canvas-soft);">
+          <div data-reveal-group class="grid grid--2" style="gap: var(--sp-4);">
             <div class="field"><label for="sg-first">First Name *</label><input class="input" id="sg-first" type="text" autocomplete="given-name"></div>
             <div class="field"><label for="sg-last">Last Name *</label><input class="input" id="sg-last" type="text" autocomplete="family-name"></div>
           </div>
@@ -266,7 +267,7 @@
   <!-- ======================= DARK CTA BAND (conversion moment) ======================= -->
   <section class="band band--dark">
     <div class="container center">
-      <h2 class="display-md mb-4">Ready to Increase Your Profits?</h2>
+      <h2 data-reveal class="display-md mb-4">Ready to Increase Your Profits?</h2>
       <p class="mb-6" style="max-width: 560px; margin-inline: auto;">The dark band with the green headline is the once-per-page conversion moment.</p>
       <a class="btn btn--primary" href="#">View Products</a>
     </div>
@@ -314,6 +315,7 @@
     </div>
   </footer>
 
+  <script src="/js/motion.js" defer></script>
   <script src="/js/site.js"></script>
 </body>
 </html>

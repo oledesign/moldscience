@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles/tokens.css">
   <link rel="stylesheet" href="/styles/site.css">
+  <link rel="stylesheet" href="/styles/motion.css">
 </head>
 <body>
 
@@ -36,19 +37,19 @@
     <!-- Hero -->
     <section class="band band--soft band--hero">
       <div class="container">
-        <h1 class="display-xl mb-4">Contact Us</h1>
-        <p class="body-lg" style="max-width: 640px;">Have questions? We're here to help. Reach out to our team and we'll get back to you within 24 hours.</p>
+        <h1 data-reveal class="display-xl mb-4">Contact Us</h1>
+        <p data-reveal class="body-lg" style="max-width: 640px;">Have questions? We're here to help. Reach out to our team and we'll get back to you within 24 hours.</p>
       </div>
     </section>
 
     <!-- Form + info -->
     <section class="band band--white">
-      <div class="container grid grid--2" style="align-items: start;">
-        <div class="card" style="background: var(--canvas-soft);">
-          <h2 class="display-sm mb-2">Send Us a Message</h2>
+      <div data-reveal-group class="container grid grid--2" style="align-items: start;">
+        <div data-reveal class="card" style="background: var(--canvas-soft);">
+          <h2 data-reveal class="display-sm mb-2">Send Us a Message</h2>
           <p class="mb-6">Fill out the form below and we'll get back to you as soon as possible.</p>
           <form data-async action="/api/contact" method="post" data-success="Message sent. We'll get back to you within 24 hours.">
-            <div class="grid grid--2" style="gap: var(--sp-4);">
+            <div data-reveal-group class="grid grid--2" style="gap: var(--sp-4);">
               <div class="field"><label for="c-first">First Name *</label><input class="input" id="c-first" name="firstName" type="text" required autocomplete="given-name"></div>
               <div class="field"><label for="c-last">Last Name *</label><input class="input" id="c-last" name="lastName" type="text" required autocomplete="family-name"></div>
             </div>
@@ -73,7 +74,7 @@
           </form>
         </div>
         <div class="stack">
-          <div class="card card--pale">
+          <div data-reveal class="card card--pale">
             <h3 class="display-sm mb-4">Contact Information</h3>
             <p class="mb-2"><span class="strong" style="color: var(--ink-deep);">Phone:</span> <a href="tel:+18887703130">(888) 770-3130</a></p>
             <p class="mb-4">Mon-Fri, 8am-6pm EST</p>
@@ -86,8 +87,8 @@
     <!-- Quick answers -->
     <section class="band band--soft">
       <div class="container center">
-        <h2 class="display-md mb-4">Looking for Quick Answers?</h2>
-        <p class="body-lg mb-6" style="max-width: 640px; margin-inline: auto;">Check out our resources section for product documentation, application guidelines, and frequently asked questions.</p>
+        <h2 data-reveal class="display-md mb-4">Looking for Quick Answers?</h2>
+        <p data-reveal class="body-lg mb-6" style="max-width: 640px; margin-inline: auto;">Check out our resources section for product documentation, application guidelines, and frequently asked questions.</p>
         <a class="btn btn--secondary" style="background: var(--canvas);" href="/resources">Browse Resources</a>
       </div>
     </section>
@@ -134,6 +135,7 @@
     </div>
   </footer>
 
+  <script src="/js/motion.js" defer></script>
   <script src="/js/site.js"></script>
   <script>
     // Preselect topic from ?topic= (used by "Request a Quote" buttons)

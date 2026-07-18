@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles/tokens.css">
   <link rel="stylesheet" href="/styles/site.css">
+  <link rel="stylesheet" href="/styles/motion.css">
 </head>
 <body>
 
@@ -36,7 +37,7 @@
     <!-- You are here -->
     <div class="band--white" style="padding-block: var(--sp-4); border-bottom: 1px solid var(--canvas-soft);">
       <div class="container">
-        <ol class="steprail steprail--current steprail--compact" aria-label="You are at step 3 of the 3-step system">
+        <ol data-reveal class="steprail steprail--current steprail--compact" aria-label="You are at step 3 of the 3-step system">
           <li><span class="node">1</span><span class="step-name">Clean</span></li>
           <li><span class="node">2</span><span class="step-name">Protect</span></li>
           <li aria-current="step"><span class="node">3</span><span class="step-name">Lock</span></li>
@@ -46,17 +47,17 @@
 
     <!-- Hero -->
     <section class="band band--soft band--hero">
-      <div class="container grid grid--2" style="align-items: center;">
+      <div data-reveal-group class="container grid grid--2" style="align-items: center;">
         <div>
-          <p class="eyebrow">Pass Air Clearance Tests</p>
-          <h1 class="display-xl mb-4">Spore Lock</h1>
-          <p class="body-lg mb-6">Unique nanotechnology that locks down hidden reservoirs of mold.  Failing an air clearance test is an expensive and frustrating situation</p>
+          <p data-reveal class="eyebrow">Pass Air Clearance Tests</p>
+          <h1 data-reveal class="display-xl mb-4">Spore Lock</h1>
+          <p data-reveal class="body-lg mb-6">Unique nanotechnology that locks down hidden reservoirs of mold.  Failing an air clearance test is an expensive and frustrating situation</p>
           <div class="cluster">
             <a class="btn btn--primary" href="/assets/docs/sds-sporelock-en.pdf" download>Download SDS</a>
           </div>
         </div>
-        <div class="card">
-          <div class="card-figure" style="aspect-ratio: 1; border-radius: var(--radius-input);">
+        <div data-reveal class="card">
+          <div data-reveal class="card-figure" style="aspect-ratio: 1; border-radius: var(--radius-input);">
             <img src="/assets/img/product-sporelock.jpg" alt="Spore Lock bottle" loading="eager" style="max-height: 100%; object-fit: contain;">
           </div>
         </div>
@@ -65,20 +66,20 @@
 
     <!-- Silane spear visuals -->
     <section class="band band--white">
-      <div class="container grid grid--2">
-        <div class="card card--media" style="background: var(--canvas-soft);">
-          <div class="card-figure" style="background: var(--canvas);">
+      <div data-reveal-group class="container grid grid--2">
+        <div data-reveal class="card card--media" style="background: var(--canvas-soft);">
+          <div data-reveal class="card-figure" style="background: var(--canvas);">
             <img src="/assets/img/silane-spear.jpg" alt="Silane spear molecular structure" loading="lazy">
           </div>
-          <div class="card-body">
+          <div data-reveal class="card-body">
             <p class="body-sm" style="color: var(--mute);">The silane spear — Spore Lock's nanotechnology anchor.</p>
           </div>
         </div>
-        <div class="card card--media" style="background: var(--canvas-soft);">
-          <div class="card-figure" style="background: var(--canvas);">
+        <div data-reveal class="card card--media" style="background: var(--canvas-soft);">
+          <div data-reveal class="card-figure" style="background: var(--canvas);">
             <img src="/assets/img/silane-surface.jpg" alt="Surface profile of a Spore Lock treated surface showing the spike structure" loading="lazy">
           </div>
-          <div class="card-body">
+          <div data-reveal class="card-body">
             <p class="body-sm" style="color: var(--mute);">Treated surface profile — the spike structure that physically inhibits mold growth.</p>
           </div>
         </div>
@@ -88,15 +89,15 @@
     <!-- Why choose -->
     <section class="band band--soft">
       <div class="container">
-        <h2 class="display-md mb-8">Why Choose Spore Lock?</h2>
-        <div class="grid grid--2" style="gap: var(--sp-4);">
-          <div class="card">Encapsulates and seals hidden reservoirs of mold</div>
-          <div class="card">Reaches sites that are difficult if not impossible to clean</div>
-          <div class="card">Ideal for remediation projects that include ductwork, mechanicals, piping, etc. that are extremely difficult to clean around</div>
-          <div class="card">Knocks down air borne spores</div>
-          <div class="card">Not a disinfectant but a physical inhibition of mold growth</div>
-          <div class="card">The last step in a mold remediation project</div>
-          <div class="card">Pass that air clearance test</div>
+        <h2 data-reveal class="display-md mb-8">Why Choose Spore Lock?</h2>
+        <div data-reveal-group class="grid grid--2" style="gap: var(--sp-4);">
+          <div data-reveal class="card">Encapsulates and seals hidden reservoirs of mold</div>
+          <div data-reveal class="card">Reaches sites that are difficult if not impossible to clean</div>
+          <div data-reveal class="card">Ideal for remediation projects that include ductwork, mechanicals, piping, etc. that are extremely difficult to clean around</div>
+          <div data-reveal class="card">Knocks down air borne spores</div>
+          <div data-reveal class="card">Not a disinfectant but a physical inhibition of mold growth</div>
+          <div data-reveal class="card">The last step in a mold remediation project</div>
+          <div data-reveal class="card">Pass that air clearance test</div>
         </div>
       </div>
     </section>
@@ -104,7 +105,7 @@
     <!-- Resources -->
     <section class="band band--white">
       <div class="container">
-        <h2 class="display-md mb-8">Resources</h2>
+        <h2 data-reveal class="display-md mb-8">Resources</h2>
         <div class="stack">
           <div class="download-row" style="background: var(--canvas-soft);">
             <span class="doc-icon doc-icon--sds" aria-hidden="true">
@@ -151,8 +152,8 @@
     <!-- Conversion moment -->
     <section class="band band--dark">
       <div class="container center">
-        <h2 class="display-md mb-4">Ready to Get Started?</h2>
-        <p class="body-lg mb-6" style="max-width: 620px; margin-inline: auto;">Contact us to speak with a product specialist about your specific needs.</p>
+        <h2 data-reveal class="display-md mb-4">Ready to Get Started?</h2>
+        <p data-reveal class="body-lg mb-6" style="max-width: 620px; margin-inline: auto;">Contact us to speak with a product specialist about your specific needs.</p>
         <a class="btn btn--primary" href="/contact">Contact Us</a>
       </div>
     </section>
@@ -199,6 +200,7 @@
     </div>
   </footer>
 
+  <script src="/js/motion.js" defer></script>
   <script src="/js/site.js"></script>
 </body>
 </html>
