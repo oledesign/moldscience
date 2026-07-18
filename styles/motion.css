@@ -16,6 +16,8 @@ html.js [data-reveal].is-visible {
 
 .card { transition: transform var(--dur-med) var(--ease-spring), background-color var(--dur-med) var(--ease-spring); }
 .card--media img { transition: transform var(--dur-slow) var(--ease-out-expo); }
+/* Product figures in padded cards need rounded image corners on every edge. */
+.card:not(.card--media) > .card-figure > img { border-radius: var(--radius-card); }
 .btn { transition: background-color var(--dur-fast) var(--ease-out-expo), transform var(--dur-fast) var(--ease-out-expo); }
 .btn:active { transform: scale(0.97); }
 
@@ -26,6 +28,15 @@ html.js [data-reveal].is-visible {
   transition: box-shadow var(--dur-med) var(--ease-out-expo), background-color var(--dur-med) var(--ease-out-expo);
 }
 .nav.is-scrolled { box-shadow: 0 1px 0 rgba(14, 15, 12, 0.08), 0 8px 24px -16px rgba(14, 15, 12, 0.18); }
+
+/* Preserve the compact nav height while restoring the Contact pill's width. */
+.nav-links a.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 20px;
+}
 
 .nav-links a:not(.btn) {
   background-image: linear-gradient(var(--primary), var(--primary));
