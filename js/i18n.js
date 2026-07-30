@@ -13,6 +13,7 @@
   const SUPPORTED = ['en', 'fr', 'es'];
   const STORAGE_KEY = 'mst-lang';
   const DEFAULT = 'en';
+  const DICT_VERSION = '2026-07-30a';
 
   function requested() {
     const q = new URLSearchParams(location.search).get('lang');
@@ -68,7 +69,9 @@
   function load(lang) {
     if (lang === DEFAULT) return Promise.resolve(null); // English is already in the DOM
     if (cache[lang]) return Promise.resolve(cache[lang]);
-    return fetch(`/i18n/${lang}.json`)
+    // DICT_VERSION busts the browser cache when translations change; bump it
+    // whenever i18n/*.json is edited, or stale strings survive a deploy.
+    return fetch(`/i18n/${lang}.json?v=${DICT_VERSION}`)
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => { if (d) cache[lang] = d; return d; })
       .catch(() => null); // network failure -> stay in English
