@@ -29,3 +29,17 @@ keep the tags intact and translate only the words around them.
 ## Status
 - `fr.json`: 243 strings, complete — NEEDS NATIVE REVIEW
 - `es.json`: 243 strings, complete — NEEDS NATIVE REVIEW
+
+## Legal pages are intentionally English-only
+
+`privacy.html` and `terms.html` carry no `data-i18n` keys on their body text.
+The runtime falls back to whatever is in the HTML when a key is missing, so
+those pages stay English in every locale.
+
+This is deliberate: machine-translated legal text creates liability rather than
+value. Only the two footer link labels are translated.
+
+If a French version is needed — and for consumer-facing content in Quebec it
+may be a legal requirement, not a nicety — have it prepared by a translator
+working from the approved English text, then add `fr-CA` copies of the pages
+rather than keys.
