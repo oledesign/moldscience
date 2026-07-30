@@ -2,3 +2,17 @@ out/
 node_modules/
 .vercel/
 .vercel
+
+# OS cruft
+.DS_Store
+**/.DS_Store
+
+# Stray non-site files parked in assets/ — keep private material out of this
+# repo, which is PUBLIC. Move business documents somewhere outside the repo.
+assets/img/*.pdf
+assets/img/IMG_*.jpeg
+assets/img/IMG_*.jpg
+
+# Microsoft Office lock/temp files
+~$*
+**/~$*

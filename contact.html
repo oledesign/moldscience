@@ -1,143 +1,150 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact Us — Mold Science Technologies</title>
-  <meta name="description" content="Have questions? We're here to help. Reach out to our team and we'll get back to you within 24 hours.">
-  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles/tokens.css">
-  <link rel="stylesheet" href="/styles/site.css">
-  <link rel="stylesheet" href="/styles/motion.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title data-i18n="contact_us_mold_science_technologies_1d3b">Contact Us — Mold Science Technologies</title>
+<meta content="Have questions? We're here to help. Reach out to our team and we'll get back to you within 24 hours." data-i18n-content="have_questions_we_re_here_2a1a" name="description"/>
+<link href="/assets/img/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://moldsciencetechnologies.vercel.app/contact" hreflang="en" rel="alternate"/>
+<link href="https://moldsciencetechnologies.vercel.app/contact?lang=fr" hreflang="fr-CA" rel="alternate"/>
+<link href="https://moldsciencetechnologies.vercel.app/contact?lang=es" hreflang="es" rel="alternate"/>
+<link href="https://moldsciencetechnologies.vercel.app/contact" hreflang="x-default" rel="alternate"/>
+<link href="/styles/tokens.css" rel="stylesheet"/>
+<link href="/styles/site.css" rel="stylesheet"/>
+<link href="/styles/motion.css" rel="stylesheet"/>
 </head>
 <body>
-
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="nav-logo" href="/" aria-label="Mold Science Technologies — Home">
-        <img src="/assets/img/logo.svg" alt="Mold Science Technologies">
-      </a>
-      <button class="nav-toggle" aria-expanded="false" aria-label="Menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      </button>
-      <ul class="nav-links">
-        <li><a href="/products">Products</a></li>
-        <li><a href="/resources">Resources</a></li>
-        <li><a href="/calculator">Profit Calculator</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a class="btn btn--primary" href="/contact" aria-current="page">Contact</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <main>
-    <!-- Hero -->
-    <section class="band band--soft band--hero">
-      <div class="container">
-        <h1 data-reveal class="display-xl mb-4">Contact Us</h1>
-        <p data-reveal class="body-lg" style="max-width: 640px;">Have questions? We're here to help. Reach out to our team and we'll get back to you within 24 hours.</p>
-      </div>
-    </section>
-
-    <!-- Form + info -->
-    <section class="band band--white">
-      <div data-reveal-group class="container grid grid--2" style="align-items: start;">
-        <div data-reveal class="card" style="background: var(--canvas-soft);">
-          <h2 data-reveal class="display-sm mb-2">Send Us a Message</h2>
-          <p class="mb-6">Fill out the form below and we'll get back to you as soon as possible.</p>
-          <form data-async action="/api/contact" method="post" data-success="Message sent. We'll get back to you within 24 hours.">
-            <div data-reveal-group class="grid grid--2" style="gap: var(--sp-4);">
-              <div class="field"><label for="c-first">First Name *</label><input class="input" id="c-first" name="firstName" type="text" required autocomplete="given-name"></div>
-              <div class="field"><label for="c-last">Last Name *</label><input class="input" id="c-last" name="lastName" type="text" required autocomplete="family-name"></div>
-            </div>
-            <div class="field"><label for="c-email">Email *</label><input class="input" id="c-email" name="email" type="email" required autocomplete="email"></div>
-            <div class="field"><label for="c-phone">Phone</label><input class="input" id="c-phone" name="phone" type="tel" autocomplete="tel"></div>
-            <div class="field"><label for="c-company">Company</label><input class="input" id="c-company" name="company" type="text" autocomplete="organization"></div>
-            <div class="field">
-              <label for="c-topic">Select a topic</label>
-              <select class="input" id="c-topic" name="topic">
-                <option>Product Information</option>
-                <option>Pricing &amp; Quotes</option>
-                <option>Technical Support</option>
-                <option>Training &amp; Workshops</option>
-                <option>Partnership Opportunities</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="field"><label for="c-message">Message *</label><textarea class="input" id="c-message" name="message" required></textarea></div>
-            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
-            <p class="form-status" hidden></p>
-            <button class="btn btn--primary" type="submit">Send Message</button>
-          </form>
-        </div>
-        <div class="stack">
-          <div data-reveal class="card card--pale">
-            <h3 class="display-sm mb-4">Contact Information</h3>
-            <p class="mb-2"><span class="strong" style="color: var(--ink-deep);">Phone:</span> <a href="tel:+18887703130">(888) 770-3130</a></p>
-            <p class="mb-4">Mon-Fri, 8am-6pm EST</p>
-            <p><span class="strong" style="color: var(--ink-deep);">Email:</span> <a href="mailto:info@moldsciencetechnologies.com">info@moldsciencetechnologies.com</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Quick answers -->
-    <section class="band band--soft">
-      <div class="container center">
-        <h2 data-reveal class="display-md mb-4">Looking for Quick Answers?</h2>
-        <p data-reveal class="body-lg mb-6" style="max-width: 640px; margin-inline: auto;">Check out our resources section for product documentation, application guidelines, and frequently asked questions.</p>
-        <a class="btn btn--secondary" style="background: var(--canvas);" href="/resources">Browse Resources</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-logo"><img src="/assets/img/logo-light.svg" alt="Mold Science Technologies"></div>
-          <p>Professional mold remediation products designed to minimize labor and maximize profit for contractors.</p>
-          <ul>
-            <li><a href="tel:+18887703130">(888) 770-3130</a></li>
-            <li><a href="mailto:info@moldsciencetechnologies.com">info@moldsciencetechnologies.com</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Products</h4>
-          <ul>
-            <li><a href="/products/on-and-gone">OmniPro On &amp; Gone</a></li>
-            <li><a href="/products/gone-4-good">OmniPro Gone 4 Good</a></li>
-            <li><a href="/products/spore-lock">Spore Lock</a></li>
-            <li><a href="/products">All Products</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="/resources#sds">Safety Data Sheets</a></li>
-            <li><a href="/resources#guides">Application Guidelines</a></li>
-            <li><a href="/resources">Product Information</a></li>
-            <li><a href="/calculator">Profit Calculator</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <ul>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-      <p class="footer-meta">© 2026 Mold Science Technologies. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="/js/motion.js" defer></script>
-  <script src="/js/site.js"></script>
-  <script>
+<header class="nav">
+<div class="container nav-inner">
+<a aria-label="Mold Science Technologies — Home" class="nav-logo" href="/">
+<img alt="Mold Science Technologies" src="/assets/img/logo.svg"/>
+</a>
+<button aria-expanded="false" aria-label="Menu" class="nav-toggle">
+<svg aria-hidden="true" fill="none" height="24" viewbox="0 0 24 24" width="24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+</button>
+<ul class="nav-links">
+<li><a data-i18n="products_fe0a" href="/products">Products</a></li>
+<li><a data-i18n="resources_87df" href="/resources">Resources</a></li>
+<li><a data-i18n="profit_calculator_030b" href="/calculator">Profit Calculator</a></li>
+<li><a data-i18n="about_6b21" href="/about">About</a></li>
+<li><a aria-current="page" class="btn btn--primary" data-i18n="contact_b374" href="/contact">Contact</a></li>
+<li class="nav-lang">
+<div aria-label="Site language" class="lang-switch" role="group">
+<button aria-pressed="true" class="lang-switch__btn is-active" data-lang-set="en" lang="en" type="button">EN</button>
+<button aria-pressed="false" class="lang-switch__btn" data-lang-set="fr" lang="fr" type="button">FR</button>
+<button aria-pressed="false" class="lang-switch__btn" data-lang-set="es" lang="es" type="button">ES</button>
+</div>
+</li>
+</ul>
+</div>
+</header>
+<main>
+<!-- Hero -->
+<section class="band band--soft band--hero">
+<div class="container">
+<h1 class="display-xl mb-4" data-i18n="contact_us_9ad0" data-reveal="">Contact Us</h1>
+<p class="body-lg" data-i18n="have_questions_we_re_here_2a1a" data-reveal="" style="max-width: 640px;">Have questions? We're here to help. Reach out to our team and we'll get back to you within 24 hours.</p>
+</div>
+</section>
+<!-- Form + info -->
+<section class="band band--white">
+<div class="container grid grid--2" data-reveal-group="" style="align-items: start;">
+<div class="card" data-reveal="" style="background: var(--canvas-soft);">
+<h2 class="display-sm mb-2" data-i18n="send_us_a_message_b455" data-reveal="">Send Us a Message</h2>
+<p class="mb-6" data-i18n="fill_out_the_form_below_740c">Fill out the form below and we'll get back to you as soon as possible.</p>
+<form action="/api/contact" data-async="" data-success="Message sent. We'll get back to you within 24 hours." method="post">
+<div class="grid grid--2" data-reveal-group="" style="gap: var(--sp-4);">
+<div class="field"><label data-i18n="first_name_422f" for="c-first">First Name *</label><input autocomplete="given-name" class="input" id="c-first" name="firstName" required="" type="text"/></div>
+<div class="field"><label data-i18n="last_name_b162" for="c-last">Last Name *</label><input autocomplete="family-name" class="input" id="c-last" name="lastName" required="" type="text"/></div>
+</div>
+<div class="field"><label data-i18n="email_604e" for="c-email">Email *</label><input autocomplete="email" class="input" id="c-email" name="email" required="" type="email"/></div>
+<div class="field"><label data-i18n="phone_7706" for="c-phone">Phone</label><input autocomplete="tel" class="input" id="c-phone" name="phone" type="tel"/></div>
+<div class="field"><label data-i18n="company_7a19" for="c-company">Company</label><input autocomplete="organization" class="input" id="c-company" name="company" type="text"/></div>
+<div class="field">
+<label data-i18n="select_a_topic_8041" for="c-topic">Select a topic</label>
+<select class="input" id="c-topic" name="topic">
+<option data-i18n="product_information_8f09">Product Information</option>
+<option data-i18n="pricing_quotes_efc4">Pricing &amp; Quotes</option>
+<option data-i18n="technical_support_9588">Technical Support</option>
+<option data-i18n="training_workshops_8f27">Training &amp; Workshops</option>
+<option data-i18n="partnership_opportunities_ee25">Partnership Opportunities</option>
+<option data-i18n="other_6e6a">Other</option>
+</select>
+</div>
+<div class="field"><label data-i18n="message_8add" for="c-message">Message *</label><textarea class="input" id="c-message" name="message" required=""></textarea></div>
+<input aria-hidden="true" autocomplete="off" name="_gotcha" style="position:absolute;left:-9999px" tabindex="-1" type="text"/>
+<p class="form-status" hidden=""></p>
+<button class="btn btn--primary" data-i18n="send_message_6dcd" type="submit">Send Message</button>
+</form>
+</div>
+<div class="stack">
+<div class="card card--pale" data-reveal="">
+<h3 class="display-sm mb-4" data-i18n="contact_information_a34b">Contact Information</h3>
+<p class="mb-2"><span class="strong" data-i18n="phone_daee" style="color: var(--ink-deep);">Phone:</span> <a data-i18n="888_770_3130_3604" href="tel:+18887703130">(888) 770-3130</a></p>
+<p class="mb-4" data-i18n="mon_fri_8am_6pm_est_8d3d">Mon-Fri, 8am-6pm EST</p>
+<p><span class="strong" data-i18n="email_4c4e" style="color: var(--ink-deep);">Email:</span> <a data-i18n="info_moldsciencetechnologies_com_7f6a" href="mailto:info@moldsciencetechnologies.com">info@moldsciencetechnologies.com</a></p>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick answers -->
+<section class="band band--soft">
+<div class="container center">
+<h2 class="display-md mb-4" data-i18n="looking_for_quick_answers_4668" data-reveal="">Looking for Quick Answers?</h2>
+<p class="body-lg mb-6" data-i18n="check_out_our_resources_section_bce4" data-reveal="" style="max-width: 640px; margin-inline: auto;">Check out our resources section for product documentation, application guidelines, and frequently asked questions.</p>
+<a class="btn btn--secondary" data-i18n="browse_resources_fd5a" href="/resources" style="background: var(--canvas);">Browse Resources</a>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="footer-logo"><img alt="Mold Science Technologies" src="/assets/img/logo-light.svg"/></div>
+<p data-i18n="professional_mold_remediation_produc_610c">Professional mold remediation products designed to minimize labor and maximize profit for contractors.</p>
+<ul>
+<li><a data-i18n="888_770_3130_3604" href="tel:+18887703130">(888) 770-3130</a></li>
+<li><a data-i18n="info_moldsciencetechnologies_com_7f6a" href="mailto:info@moldsciencetechnologies.com">info@moldsciencetechnologies.com</a></li>
+</ul>
+</div>
+<div>
+<h4 data-i18n="products_fe0a">Products</h4>
+<ul>
+<li><a data-i18n="omnipro_on_gone_036c" href="/products/on-and-gone">OmniPro On &amp; Gone</a></li>
+<li><a data-i18n="omnipro_gone_4_good_756a" href="/products/gone-4-good">OmniPro Gone 4 Good</a></li>
+<li><a data-i18n="spore_lock_a215" href="/products/spore-lock">Spore Lock</a></li>
+<li><a data-i18n="all_products_60fe" href="/products">All Products</a></li>
+</ul>
+</div>
+<div>
+<h4 data-i18n="resources_87df">Resources</h4>
+<ul>
+<li><a data-i18n="safety_data_sheets_604f" href="/resources#sds">Safety Data Sheets</a></li>
+<li><a data-i18n="application_guidelines_38ab" href="/resources#guides">Application Guidelines</a></li>
+<li><a data-i18n="product_information_8f09" href="/resources">Product Information</a></li>
+<li><a data-i18n="profit_calculator_030b" href="/calculator">Profit Calculator</a></li>
+</ul>
+</div>
+<div>
+<h4 data-i18n="company_7a19">Company</h4>
+<ul>
+<li><a data-i18n="about_us_c887" href="/about">About Us</a></li>
+<li><a data-i18n="contact_b374" href="/contact">Contact</a></li>
+</ul>
+</div>
+</div>
+<p class="footer-meta" data-i18n="2026_mold_science_technologies_all_32bc">© 2026 Mold Science Technologies. All rights reserved.</p>
+</div>
+</footer>
+<script defer="" src="/js/motion.js"></script>
+<script defer="" src="/js/i18n.js"></script>
+<script src="/js/site.js"></script>
+<script>
     // Preselect topic from ?topic= (used by "Request a Quote" buttons)
     const topic = new URLSearchParams(location.search).get('topic');
     if (topic) {

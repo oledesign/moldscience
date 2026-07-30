@@ -213,3 +213,67 @@ Test every page with JavaScript enabled and disabled.
 Test keyboard focus independently from hover behavior.
 Test reduced motion at the operating-system or browser level.
 Prefer fewer coordinated motions over many unrelated effects.
+
+---
+
+## Interactive system components (added 2026-07-30)
+
+### Clickable product figures — `.figure-link`
+Every product photo outside its own detail page links to that page. Wrap the
+`.card-figure` in `<a class="figure-link" href="…" aria-label="View …">`.
+Hover scales the image 1.04 over `--dur-slow`; a page never links to itself.
+
+### Interactive 3-step rail
+The Clean → Protect → Lock rail is now navigation, not decoration.
+
+| Step | Name | Product | Href |
+|---|---|---|---|
+| 1 | Clean | OmniPro On & Gone | `/products/on-and-gone` |
+| 2 | Protect | OmniPro Gone 4 Good | `/products/gone-4-good` |
+| 3 | Lock | Spore Lock | `/products/spore-lock` |
+
+- Each step is an `<a class="step-link">`; the **current page's own step is a
+  `<span class="step-link" aria-current="page">`** — never a self-link.
+- `.step-figure` is a circular product thumbnail (72px full / 52px compact /
+  48px under 640px) with the number as a badge pinned bottom-right.
+- Number badges always carry a solid `--canvas` fill so they stay legible over
+  the photo. Current step gets a `--primary` ring and green badge.
+- `.steprail--paired` (home hero only) hides thumbnails, because the three
+  product photos already sit directly above that rail.
+- Connector-line insets are tuned per size — if you change a thumbnail
+  diameter, re-tune `li + li::before` `top`/`left`/`right` to match.
+- Each product page carries **two** rails: the compact "you are here" rail at
+  the top and a full "Complete the system." rail above the dark CTA, which
+  ends in a forward CTA (`Next: …`, or Contact on the last step).
+
+### Resource language filter — `.lang-filter`
+Segmented All / EN / FR pill, **All is the default**. Rows are tagged
+`data-lang="en|fr"` derived from their file suffix. Rows with no `data-lang`
+are language-neutral and always visible. `js/doc-filter.js` hides
+non-matching rows and collapses any section left empty, so no orphan
+headings remain. A polite `role="status"` line covers the zero-results case.
+
+### Liquid hero — `js/hero-ripple.js`
+A portable-WebGL warp on the attic hero, in the spirit of Canvas UI's
+Ripple/Liquid: a slow ambient swell plus a soft lens that eases toward the
+pointer (0.075 lerp, so it has weight rather than snapping).
+
+Canvas UI's own components render HTML onto canvas through an experimental
+Chrome-only API; that was rejected because most contractors would see nothing.
+This uses plain WebGL on the photo instead and degrades cleanly — no WebGL, no
+image, or `prefers-reduced-motion` and the CSS background simply remains.
+
+**Gotcha:** the ink scrim is a gradient layer inside `.hero-attic`'s
+`background-image`, which the canvas paints over. `.hero-ripple::after`
+re-applies the identical gradient above the canvas — **keep those two gradient
+values in sync**, or hero text loses contrast.
+
+### Loading states
+`.media-frame`, `.card-figure` and `.result-image` run a `skeleton-sweep`
+shimmer behind the image while it decodes, stopped by `.is-loaded` (added in
+`js/motion.js`).
+
+**Deliberate constraint:** images are never hidden with `opacity: 0` pending a
+JS class. An earlier version did, and a stale cached script left real content
+invisible. The shimmer sits *behind* the image, so the worst failure mode is an
+unseen shimmer — never missing content. Don't reintroduce JS-gated visibility.

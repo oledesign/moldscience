@@ -53,3 +53,13 @@ document.documentElement.classList.add('js');
   updateNav();
   window.addEventListener('scroll', requestNavUpdate, { passive: true });
 })();
+
+// Fade images in as they decode, so lazy images don't pop in mid-scroll.
+(function () {
+  function mark(img) { img.classList.add('is-loaded'); }
+  document.querySelectorAll('img[loading="lazy"]').forEach((img) => {
+    if (img.complete && img.naturalWidth) return mark(img);
+    img.addEventListener('load', () => mark(img), { once: true });
+    img.addEventListener('error', () => mark(img), { once: true }); // never leave it invisible
+  });
+})();
