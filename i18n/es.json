@@ -186,7 +186,7 @@
   "omnipro_on_gone_gone_4_5ab1": "OmniPro On & Gone / Gone 4 Good – Hoja de información del producto (EN)",
   "sizes_coverage_skus_and_distributor_5f6d": "Tamaños, rendimiento, SKU y lista de distribuidores.",
   "formats_rendement_codes_sku_et_58de": "Formats, rendement, codes SKU et distributeurs.",
-  "on_gone_gone_4_good_b924": "On & Gone + Gone 4 Good – Hoja de venta y caso de estudio (EN)",
+  "on_gone_gone_4_good_b924": "On & Gone + Gone 4 Good – Caso de estudio (EN)",
   "real_crawl_space_job_heavy_6182": "Trabajo real en sótano bajo: manchas severas eliminadas y luego superficies protegidas.",
   "profit_building_app_overview_en_6712": "Aplicación de rentabilidad – Resumen (EN)",
   "how_the_app_captures_true_9ea4": "Cómo la aplicación captura los costos reales del trabajo y lo lleva a su margen objetivo.",
@@ -247,5 +247,16 @@
   "before_74f3": "Antes",
   "after_79ba": "Después",
   "privacy_policy_ba9c": "Política de privacidad",
-  "terms_of_use_1c78": "Términos de uso"
+  "terms_of_use_1c78": "Términos de uso",
+  "ghs_omnipro_on_gone_en_t": "OmniPro On & Gone – Etiqueta SGA (EN)",
+  "ghs_omnipro_on_gone_en_m": "Pictogramas de peligro, palabra de advertencia y consejos de prudencia para OmniPro On & Gone.",
+  "ghs_omnipro_on_gone_fr_t": "OmniPro On & Gone – Etiqueta SGA (FR)",
+  "ghs_omnipro_on_gone_fr_m": "Pictogrammes de danger, mention d’avertissement et conseils de prudence pour OmniPro On & Gone.",
+  "ghs_gone4good_en_t": "OmniPro Gone 4 Good – Etiqueta SGA (EN)",
+  "ghs_gone4good_en_m": "Pictogramas de peligro, palabra de advertencia y consejos de prudencia para OmniPro Gone 4 Good.",
+  "ghs_gone4good_fr_t": "OmniPro Gone 4 Good – Etiqueta SGA (FR)",
+  "ghs_gone4good_fr_m": "Pictogrammes de danger, mention d’avertissement et conseils de prudence pour OmniPro Gone 4 Good.",
+  "send_us_your_details_and_a1b2": "Envíenos sus datos y le enviaremos la aplicación directamente a su teléfono celular. Toda la información compartida se mantendrá en estricta confidencialidad.",
+  "cell_phone_number_c3d4": "Número de teléfono celular *",
+  "i_am_not_a_robot_e5f6": "No soy un robot"
 }

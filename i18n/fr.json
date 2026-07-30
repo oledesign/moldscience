@@ -186,7 +186,7 @@
   "omnipro_on_gone_gone_4_5ab1": "OmniPro On & Gone / Gone 4 Good – Fiche d’information produit (EN)",
   "sizes_coverage_skus_and_distributor_5f6d": "Formats, rendement, codes SKU et liste des distributeurs.",
   "formats_rendement_codes_sku_et_58de": "Formats, rendement, codes SKU et distributeurs.",
-  "on_gone_gone_4_good_b924": "On & Gone + Gone 4 Good – Fiche de vente et étude de cas (EN)",
+  "on_gone_gone_4_good_b924": "On & Gone + Gone 4 Good – Étude de cas (EN)",
   "real_crawl_space_job_heavy_6182": "Chantier réel en vide sanitaire : taches importantes éliminées, puis surfaces protégées.",
   "profit_building_app_overview_en_6712": "Application de rentabilité – Survol (EN)",
   "how_the_app_captures_true_9ea4": "Comment l’application saisit les coûts réels d’un chantier et vous amène à votre marge visée.",
@@ -247,5 +247,16 @@
   "before_74f3": "Avant",
   "after_79ba": "Après",
   "privacy_policy_ba9c": "Politique de confidentialité",
-  "terms_of_use_1c78": "Conditions d’utilisation"
+  "terms_of_use_1c78": "Conditions d’utilisation",
+  "ghs_omnipro_on_gone_en_t": "OmniPro On & Gone – Étiquette SGH (EN)",
+  "ghs_omnipro_on_gone_en_m": "Pictogrammes de danger, mention d’avertissement et conseils de prudence pour OmniPro On & Gone.",
+  "ghs_omnipro_on_gone_fr_t": "OmniPro On & Gone – Étiquette SGH (FR)",
+  "ghs_omnipro_on_gone_fr_m": "Pictogrammes de danger, mention d’avertissement et conseils de prudence pour OmniPro On & Gone.",
+  "ghs_gone4good_en_t": "OmniPro Gone 4 Good – Étiquette SGH (EN)",
+  "ghs_gone4good_en_m": "Pictogrammes de danger, mention d’avertissement et conseils de prudence pour OmniPro Gone 4 Good.",
+  "ghs_gone4good_fr_t": "OmniPro Gone 4 Good – Étiquette SGH (FR)",
+  "ghs_gone4good_fr_m": "Pictogrammes de danger, mention d’avertissement et conseils de prudence pour OmniPro Gone 4 Good.",
+  "send_us_your_details_and_a1b2": "Envoyez-nous vos coordonnées et nous transmettrons l’application directement à votre téléphone cellulaire. Tous les renseignements communiqués demeureront strictement confidentiels.",
+  "cell_phone_number_c3d4": "Numéro de téléphone cellulaire *",
+  "i_am_not_a_robot_e5f6": "Je ne suis pas un robot"
 }

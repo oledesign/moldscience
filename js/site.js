@@ -40,3 +40,9 @@ document.querySelectorAll('form[data-async]').forEach((form) => {
     }
   });
 });
+
+// Stamp when the form became available. The API rejects submissions that arrive
+// implausibly fast, which catches scripted fillers without troubling a human.
+document.querySelectorAll('form[data-async] input[name="_started"]').forEach((el) => {
+  el.value = String(Date.now());
+});

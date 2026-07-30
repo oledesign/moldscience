@@ -186,7 +186,7 @@
   "omnipro_on_gone_gone_4_5ab1": "OmniPro On & Gone / Gone 4 Good – Product Information Sheet (EN)",
   "sizes_coverage_skus_and_distributor_5f6d": "Sizes, coverage, SKUs and distributor listings.",
   "formats_rendement_codes_sku_et_58de": "Formats, rendement, codes SKU et distributeurs.",
-  "on_gone_gone_4_good_b924": "On & Gone + Gone 4 Good – Sell Sheet & Case Study (EN)",
+  "on_gone_gone_4_good_b924": "On & Gone + Gone 4 Good – Case Study (EN)",
   "real_crawl_space_job_heavy_6182": "Real crawl-space job: heavy staining removed, then protected.",
   "profit_building_app_overview_en_6712": "Profit Building App – Overview (EN)",
   "how_the_app_captures_true_9ea4": "How the app captures true job costs and drives your target margin.",
@@ -247,5 +247,16 @@
   "before_74f3": "Before",
   "after_79ba": "After",
   "privacy_policy_ba9c": "Privacy Policy",
-  "terms_of_use_1c78": "Terms of Use"
+  "terms_of_use_1c78": "Terms of Use",
+  "ghs_omnipro_on_gone_en_t": "OmniPro On & Gone – GHS Label (EN)",
+  "ghs_omnipro_on_gone_en_m": "Hazard pictograms, signal word and precautionary statements for OmniPro On & Gone.",
+  "ghs_omnipro_on_gone_fr_t": "OmniPro On & Gone – Étiquette SGH (FR)",
+  "ghs_omnipro_on_gone_fr_m": "Pictogrammes de danger, mention d’avertissement et conseils de prudence pour OmniPro On & Gone.",
+  "ghs_gone4good_en_t": "OmniPro Gone 4 Good – GHS Label (EN)",
+  "ghs_gone4good_en_m": "Hazard pictograms, signal word and precautionary statements for OmniPro Gone 4 Good.",
+  "ghs_gone4good_fr_t": "OmniPro Gone 4 Good – Étiquette SGH (FR)",
+  "ghs_gone4good_fr_m": "Pictogrammes de danger, mention d’avertissement et conseils de prudence pour OmniPro Gone 4 Good.",
+  "send_us_your_details_and_a1b2": "Send us your details and we will send our app directly to your cell phone. All information shared will be held in strictest confidence.",
+  "cell_phone_number_c3d4": "Cell Phone Number *",
+  "i_am_not_a_robot_e5f6": "I am not a robot"
 }
