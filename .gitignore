@@ -16,3 +16,6 @@ assets/img/IMG_*.jpg
 # Microsoft Office lock/temp files
 ~$*
 **/~$*
+
+# social-card build inputs (rendered to assets/img/og-*.jpg)
+og-build/
