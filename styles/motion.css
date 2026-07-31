@@ -548,3 +548,11 @@ h1, h2, h3, .display-mega, .display-xxl, .display-xl, .display-md, .display-sm {
   accent-color: var(--primary);
   cursor: pointer;
 }
+
+/* testimonial: discrete quoted lines, not one merged sentence */
+.results-quote .quote-line {
+  font-size: var(--body-lg-size);
+  line-height: var(--body-lg-line);
+  margin-bottom: var(--sp-4);
+}
+.results-quote .quote-line:last-of-type { margin-bottom: var(--sp-6); }
