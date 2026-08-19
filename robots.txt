@@ -4,4 +4,4 @@ Allow: /
 # build inputs, not content
 Disallow: /og-build/
 
-Sitemap: https://moldsciencetechnologies.vercel.app/sitemap.xml
+Sitemap: https://www.moldsciencetechnologies.com/sitemap.xml
