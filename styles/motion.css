@@ -522,7 +522,7 @@ h1, h2, h3, .display-mega, .display-xxl, .display-xl, .display-md, .display-sm {
 /* ==========================================================================
    Legal pages (privacy, terms) — long-form reading measure
    ========================================================================== */
-.legal-prose { max-width: 68ch; }
+.legal-prose { max-width: 100ch; }
 .legal-prose h2 { margin-top: var(--sp-12); }
 .legal-prose h2:first-child { margin-top: 0; }
 .legal-prose p, .legal-prose ul { margin-bottom: var(--sp-4); }

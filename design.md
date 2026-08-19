@@ -33,6 +33,16 @@ Status colors are not brand accents.
 Green brand color should remain purposeful rather than decorative.
 Surface contrast supplies elevation; default cards do not need shadows.
 
+## Logo and Favicon
+
+| Asset | File | Use |
+|---|---|---|
+| Primary (dark) logo | `assets/img/logo.svg` | Header and any light surface (`--canvas`, `--canvas-soft`, pale green) |
+| Light logo | `assets/img/logo-light.svg` | Ink bands, dark cards, and the footer |
+| Favicon | `assets/img/favicon.svg` | Browser tab; linked as `rel="icon" type="image/svg+xml"` on every page |
+
+Never place the dark logo on ink or the light logo on light surfaces.
+
 ## Typography
 
 Display type uses Manrope at weight 800.
