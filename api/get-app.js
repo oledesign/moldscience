@@ -1,4 +1,4 @@
-// Profit Building App request — captures name, email and cell, then delivers the
+// Profit Building App request — captures name, company, email and cell, then delivers the
 // lead and sends the app to the prospect.
 //
 // Delivery is pluggable so the CRM can change without touching this file:
@@ -24,7 +24,7 @@ const MIN_FILL_MS = 2500; // a human cannot read the form and submit faster than
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { name, email, phone, human, _gotcha, _started } = req.body || {};
+  const { name, company, email, phone, human, _gotcha, _started } = req.body || {};
 
   // --- bot gates -----------------------------------------------------------
   // 1. honeypot: a hidden field only an automated filler would populate
@@ -37,7 +37,7 @@ export default async function handler(req, res) {
   // 3. the explicit "I am not a robot" confirmation
   if (!human) return res.status(400).json({ error: 'Please confirm you are not a robot.' });
 
-  if (!name || !email || !phone) {
+  if (!name || !company || !email || !phone) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(String(email))) {
@@ -48,6 +48,7 @@ export default async function handler(req, res) {
     source: 'moldsciencetechnologies.com — Profit Building App',
     submittedAt: new Date().toISOString(),
     name: String(name).slice(0, 200),
+    company: String(company).slice(0, 200),
     email: String(email).slice(0, 200),
     phone: String(phone).slice(0, 60),
   };
@@ -119,10 +120,11 @@ export default async function handler(req, res) {
           from: process.env.MAIL_FROM,
           to: [process.env.MAIL_TO || LEAD_TO],
           reply_to: lead.email,
-          subject: `Profit Calculator lead — ${lead.name}`,
+          subject: `Profit Calculator lead — ${lead.name} (${lead.company})`,
           html: `
             <h2>New Profit Building App request</h2>
             <p><strong>Name:</strong> ${esc(lead.name)}</p>
+            <p><strong>Company:</strong> ${esc(lead.company)}</p>
             <p><strong>Email:</strong> ${esc(lead.email)}</p>
             <p><strong>Cell:</strong> ${esc(lead.phone)}</p>
             <p>Please text the app link to this contractor and follow up.</p>
