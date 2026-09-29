@@ -1,7 +1,10 @@
 :root {
   --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+  --dur-press: 140ms;
   --dur-fast: 180ms;
+  --dur-menu: 200ms;
+  --dur-hover: 280ms;
   --dur-med: 500ms;
   --dur-slow: 700ms;
 }
@@ -13,12 +16,18 @@ html.js [data-reveal].is-visible {
   transition: opacity var(--dur-slow) var(--ease-out-expo), transform var(--dur-slow) var(--ease-out-expo);
   transition-delay: calc(var(--reveal-i, 0) * 70ms);
 }
+/* One reveal per visual unit. A [data-reveal] nested inside another rides its
+   parent's entrance instead of fading and translating a second time (that
+   double-moved card content by 40px). The observer still tags it .is-visible,
+   so the step rail's own connector draw keeps working. */
+html.js [data-reveal] [data-reveal],
+html.js [data-reveal] [data-reveal].is-visible { opacity: 1; transform: none; transition: none; }
 
-.card { transition: transform var(--dur-med) var(--ease-spring), background-color var(--dur-med) var(--ease-spring); }
+.card { transition: transform var(--dur-hover) var(--ease-spring), background-color var(--dur-hover) var(--ease-spring); }
 .card--media img { transition: transform var(--dur-slow) var(--ease-out-expo); }
 /* Product figures in padded cards need rounded image corners on every edge. */
 
-.btn { transition: background-color var(--dur-fast) var(--ease-out-expo), transform var(--dur-fast) var(--ease-out-expo); }
+.btn { transition: background-color var(--dur-fast) var(--ease-out-expo), transform var(--dur-press) var(--ease-out-expo); }
 .btn:active { transform: scale(0.97); }
 
 .nav {
@@ -45,12 +54,13 @@ html.js [data-reveal].is-visible {
   background-size: 0 2px;
   transition: background-size 240ms var(--ease-out-expo);
 }
-.nav-links a:not(.btn):hover,
 .nav-links a:not(.btn):focus-visible,
 .nav-links a:not(.btn)[aria-current="page"] {
   background-size: 100% 2px;
   text-decoration: none;
 }
+/* Neutralise site.css's tap-triggered underline; the drawn underline is hover-gated below. */
+.nav-links a:not(.btn):hover { text-decoration: none; }
 
 html.js .steprail[data-reveal] li + li::before { transform: scaleX(0); transform-origin: left; }
 html.js .steprail[data-reveal] .node { opacity: 0; transform: scale(0.6); }
@@ -70,6 +80,10 @@ html.js .steprail[data-reveal].is-visible li:nth-child(3) .node { transition-del
   a.card:hover, .card--link:hover { transform: translateY(-4px); }
   .card--media:hover img { transform: scale(1.03); }
   .btn--primary:hover { transform: translateY(-1px); }
+  .nav-links a:not(.btn):hover { background-size: 100% 2px; }
+  /* The hover lift above out-ranks .btn:active, so the press must be restated
+     here or primary buttons never compress under a mouse. */
+  .btn:hover:active { transform: scale(0.97); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -213,8 +227,8 @@ html.js .steprail[data-reveal].is-visible li:nth-child(3) .node { transition-del
   color: inherit;
   padding: var(--sp-2);
   border-radius: var(--radius-input);
-  transition: transform var(--dur-med) var(--ease-spring),
-              background-color var(--dur-med) var(--ease-out-expo);
+  transition: transform var(--dur-hover) var(--ease-spring),
+              background-color var(--dur-hover) var(--ease-out-expo);
 }
 .step-figure {
   position: relative;
@@ -225,8 +239,8 @@ html.js .steprail[data-reveal].is-visible li:nth-child(3) .node { transition-del
   display: grid;
   place-items: center;
   box-shadow: inset 0 0 0 2px var(--canvas-soft);
-  transition: box-shadow var(--dur-med) var(--ease-out-expo),
-              transform var(--dur-med) var(--ease-spring);
+  transition: box-shadow var(--dur-hover) var(--ease-out-expo),
+              transform var(--dur-hover) var(--ease-spring);
 }
 .step-figure img { width: 78%; height: 78%; object-fit: contain; }
 .steprail .step-figure .node {
@@ -293,8 +307,8 @@ a.step-link:active { transform: scale(0.98); }
   color: var(--ink-deep);
   display: grid;
   place-items: center;
-  transition: transform var(--dur-med) var(--ease-spring),
-              background-color var(--dur-med) var(--ease-out-expo);
+  transition: transform var(--dur-hover) var(--ease-spring),
+              background-color var(--dur-hover) var(--ease-out-expo);
 }
 @media (hover: hover) {
   .check-item:hover .check-icon { transform: scale(1.06); background: var(--primary-neutral); }
@@ -556,3 +570,62 @@ h1, h2, h3, .display-mega, .display-xxl, .display-xl, .display-md, .display-sm {
   margin-bottom: var(--sp-4);
 }
 .results-quote .quote-line:last-of-type { margin-bottom: var(--sp-6); }
+
+/* ==========================================================================
+   Polish pass (2026-09-29)
+   ========================================================================== */
+
+/* Mobile menu: it used to snap open via display:none. It now stays laid out and
+   fades/settles in (200ms) and out faster (120ms) — slow where the user is
+   deciding, fast where the system responds. visibility:hidden keeps the links
+   out of the tab order while closed; the delayed visibility flip lets the exit
+   finish before they vanish. */
+@media (max-width: 899px) {
+  .nav-links {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-6px);
+    transform-origin: top center;
+    pointer-events: none;
+    transition: opacity 120ms ease-out, transform 120ms ease-out, visibility 0s linear 120ms;
+  }
+  .nav.is-open .nav-links {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    transition: opacity var(--dur-menu) var(--ease-out-expo), transform var(--dur-menu) var(--ease-out-expo), visibility 0s;
+  }
+}
+
+/* Hit areas: small pill controls keep their look but get a 44px target. */
+.lang-switch__btn, .lang-filter__btn { position: relative; }
+.lang-switch__btn::after { content: ""; position: absolute; inset: -8px 0; }
+.lang-filter__btn::after { content: ""; position: absolute; inset: -4px 0; }
+
+/* Touch: footer links were 17px tall, which is a miss-tap on a phone. */
+@media (pointer: coarse) {
+  .footer a:not(.footer-logo) { display: inline-block; padding-block: 10px; }
+  .footer li { margin-bottom: 0; }
+}
+
+/* Print: reveals only run for what was scrolled into view, so anything below the
+   fold printed as a blank page (SDS and product sheets get printed). */
+@media print {
+  html.js [data-reveal],
+  html.js .steprail[data-reveal] .node,
+  html.js .steprail[data-reveal] li + li::before {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Reduced motion keeps colour feedback and drops movement. */
+@media (prefers-reduced-motion: reduce) {
+  .card, .btn, .card--media img { transition-property: background-color, opacity; }
+  a.card:hover, .card--link:hover, .card--media:hover img,
+  .btn--primary:hover, .btn:hover:active, .btn:active { transform: none; }
+  .nav-links, .nav.is-open .nav-links { transform: none; }
+}

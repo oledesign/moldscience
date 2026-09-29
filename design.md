@@ -152,9 +152,13 @@ Use it for tactile card and control movement.
 
 ### Duration tokens
 
-`--dur-fast` is 180ms for direct button feedback.
-`--dur-med` is 500ms for cards, nav polish, and marker response.
+`--dur-press` is 140ms for the press-down scale on buttons.
+`--dur-fast` is 180ms for direct button colour feedback.
+`--dur-menu` is 200ms for the mobile menu opening (it closes in 120ms).
+`--dur-hover` is 280ms for hover lifts and hover colour changes.
+`--dur-med` is 500ms for nav polish and step-rail marker entrances.
 `--dur-slow` is 700ms for content reveals and media movement.
+UI feedback stays under 300ms; only entrances and decorative media run longer.
 The step-rail connector draws over 900ms.
 Nav underlines draw over 240ms.
 
@@ -287,3 +291,53 @@ shimmer behind the image while it decodes, stopped by `.is-loaded` (added in
 JS class. An earlier version did, and a stale cached script left real content
 invisible. The shimmer sits *behind* the image, so the worst failure mode is an
 unseen shimmer — never missing content. Don't reintroduce JS-gated visibility.
+
+---
+
+## Polish pass (added 2026-09-29)
+
+Principles applied: UI feedback under 300ms, ease-out only, movement dropped (not
+colour) under reduced motion, no state that only exists on hover, and no hidden
+content when JS or scroll has not run.
+
+### Reveals
+- **One reveal per visual unit.** A `[data-reveal]` nested inside another rides its
+  parent's entrance (`html.js [data-reveal] [data-reveal]` resets it). Nesting used
+  to double-move card content by 40px. Prefer putting `data-reveal` on the outer
+  element only; the step rail keeps its own connector draw regardless.
+- The observer also reveals anything already scrolled past (reload that restores
+  scroll position), so nothing is stranded hidden above the fold.
+- **Print** forces every reveal visible. Product and SDS pages get printed.
+- **Gotcha:** never put `data-reveal` on an element that also has a hover
+  transform (e.g. a linked card). `html.js [data-reveal].is-visible` sets a 700ms
+  transition plus a stagger delay that outranks the component's own transition,
+  so the hover would lag. Wrap it in a `[data-reveal]` div instead.
+
+### Press and hover
+- `.btn:hover:active` restates `scale(0.97)`. Without it the primary button's
+  hover lift (`translateY(-1px)`) out-ranked `.btn:active`, so primary buttons
+  never compressed under a mouse.
+- The nav underline draw is inside `@media (hover: hover)`; touch no longer gets a
+  sticky underline after a tap.
+
+### Mobile menu
+- Fades and settles in over `--dur-menu` (translateY -6px → 0), out over 120ms.
+  It stays laid out and uses `visibility` so closed links are not focusable.
+- `js/motion.js` closes it on Escape (focus returns to the toggle), an outside
+  tap, a link tap, and when the viewport widens past 900px. The toggle itself is
+  in `js/site.js`.
+
+### Hit areas
+- `.lang-switch__btn` and `.lang-filter__btn` keep their look but extend to a 44px
+  target with an invisible `::after`.
+- On `(pointer: coarse)` footer links get 10px block padding (they were 17px tall).
+
+### Reduced motion
+- Keeps colour and opacity feedback, removes transforms: card lift, image scale,
+  button hover/press, and the menu's slide.
+
+### Liquid hero (`js/hero-ripple.js`)
+- Exactly one `requestAnimationFrame` loop per hero. The observer's first callback
+  used to start a second loop beside the initial one (measured 120 draws/sec on a
+  60Hz display, now 60).
+- Pointer easing is scaled by elapsed frames, so it feels identical at 60Hz and 120Hz.

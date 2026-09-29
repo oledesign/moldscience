@@ -159,11 +159,22 @@
     );
     host.addEventListener('pointerleave', () => { hoverTarget = 0; }, { passive: true });
 
+    // One rAF loop at a time. The observer's first callback fires immediately
+    // (hero is on screen), and used to start a second loop beside the initial
+    // one — double the GPU work and double the pointer easing.
     let running = true;
+    let looping = false;
+    let last = 0;
+    function kick() {
+      if (looping) return;
+      looping = true;
+      last = performance.now();
+      requestAnimationFrame(frame);
+    }
     const io = new IntersectionObserver(
       (entries) => {
         running = entries[0].isIntersecting;
-        if (running) requestAnimationFrame(frame);
+        if (running) kick();
       },
       { threshold: 0 }
     );
@@ -177,11 +188,15 @@
 
     const start = performance.now();
     function frame(now) {
-      if (!running) return;
-      // ease the pointer so the lens has weight instead of snapping
-      eased[0] += (target[0] - eased[0]) * 0.075;
-      eased[1] += (target[1] - eased[1]) * 0.075;
-      hover += (hoverTarget - hover) * 0.06;
+      if (!running) { looping = false; return; }
+      // ease the pointer so the lens has weight instead of snapping. Scaled by
+      // elapsed frames so a 120Hz display feels the same as a 60Hz one.
+      const dt = Math.min((now - last) / 16.667, 4);
+      last = now;
+      const kPointer = 1 - Math.pow(1 - 0.075, dt);
+      eased[0] += (target[0] - eased[0]) * kPointer;
+      eased[1] += (target[1] - eased[1]) * kPointer;
+      hover += (hoverTarget - hover) * (1 - Math.pow(1 - 0.06, dt));
 
       gl.uniform2f(u.mouse, eased[0], eased[1]);
       gl.uniform1f(u.hover, hover);
@@ -189,7 +204,7 @@
       gl.drawArrays(gl.TRIANGLES, 0, 3);
       requestAnimationFrame(frame);
     }
-    requestAnimationFrame(frame);
+    kick();
     };
   }
 })();
