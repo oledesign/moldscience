@@ -108,9 +108,10 @@
 <h2 class="display-md mb-4" data-i18n="the_app_does_all_of_96be" data-reveal="">The app does all of the above and more. And we provide it free to our customers!</h2>
 </div>
 <div class="card" data-reveal="">
-<form action="/api/get-app" data-async="" data-success="Thanks — check your email and your phone. Your app is on the way. Questions? Call us at (888) 770-3130." method="post">
+<form action="/api/get-app" data-async="" data-success-panel="ga-done" method="post">
 <p class="body-sm mb-4" data-i18n="send_us_your_details_and_a1b2">Send us your details and we will send our app directly to your cell phone. All information shared will be held in strictest confidence.</p>
 <div class="field"><label data-i18n="name_d145" for="ga-name">Name *</label><input autocomplete="name" class="input" id="ga-name" name="name" required="" type="text"/></div>
+<div class="field"><label data-i18n="company_name_7b21" for="ga-company">Company Name *</label><input autocomplete="organization" class="input" id="ga-company" name="company" required="" type="text"/></div>
 <div class="field"><label data-i18n="email_604e" for="ga-email">Email *</label><input autocomplete="email" class="input" id="ga-email" name="email" required="" type="email"/></div>
 <div class="field"><label data-i18n="cell_phone_number_c3d4" for="ga-phone">Cell Phone Number *</label><input autocomplete="tel" class="input" id="ga-phone" inputmode="tel" name="phone" required="" type="tel"/></div>
 <label class="consent-check">
@@ -123,6 +124,10 @@
 <button class="btn btn--primary" data-i18n="get_the_free_app_9d5a" type="submit">Get the Free App</button>
 <p class="body-sm" style="margin-top: var(--sp-4);"><a data-i18n="download_the_app_overview_pdf_e8a4" download="" href="/assets/docs/guide-profit-app-en.pdf">Download the app overview (PDF)</a></p>
 </form>
+<div class="form-done" hidden="" id="ga-done" role="status">
+<img alt="Mold Science Technologies" class="form-done-logo" src="/assets/img/logo.svg"/>
+<p class="body-md" data-i18n="thanks_we_will_send_you_3c8e">Thanks — we will send you the app shortly. Questions? Call us at (888) 770-3130.</p>
+</div>
 </div>
 </div>
 </section>

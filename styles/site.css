@@ -394,3 +394,9 @@ textarea.input { min-height: 120px; resize: vertical; }
 .stack > * + * { margin-top: var(--sp-4); }
 .cluster { display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: center; }
 .center { text-align: center; }
+
+/* Post-submit state for the app request form: fields and button are replaced
+   by the logo and a thank-you note. */
+.form-done { display: grid; gap: var(--sp-4); justify-items: start; }
+.form-done[hidden] { display: none; }
+.form-done-logo { height: 44px; width: auto; }

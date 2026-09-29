@@ -96,7 +96,12 @@
 </select>
 </div>
 <div class="field"><label data-i18n="message_8add" for="c-message">Message *</label><textarea class="input" id="c-message" name="message" required=""></textarea></div>
+<label class="consent-check">
+<input id="c-human" name="human" required="" type="checkbox" value="yes"/>
+<span data-i18n="i_am_not_a_robot_e5f6">I am not a robot</span>
+</label>
 <input aria-hidden="true" autocomplete="off" name="_gotcha" style="position:absolute;left:-9999px" tabindex="-1" type="text"/>
+<input name="_started" type="hidden" value=""/>
 <p class="form-status" hidden=""></p>
 <button class="btn btn--primary" data-i18n="send_message_6dcd" type="submit">Send Message</button>
 </form>

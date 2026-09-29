@@ -28,6 +28,14 @@ document.querySelectorAll('form[data-async]').forEach((form) => {
       });
       if (!res.ok) throw new Error('send failed');
       form.reset();
+      // A form that names a success panel is replaced wholesale — fields and
+      // button go away and the panel (logo + thank-you) takes their place.
+      const panel = form.dataset.successPanel && document.getElementById(form.dataset.successPanel);
+      if (panel) {
+        form.hidden = true;
+        panel.hidden = false;
+        return;
+      }
       status.className = 'form-status callout callout--positive';
       status.textContent = form.dataset.success;
     } catch (err) {
