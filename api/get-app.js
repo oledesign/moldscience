@@ -15,26 +15,24 @@
 //
 // Optional: APP_LINK_IOS, APP_LINK_ANDROID, BOOKLET_URL, MAIL_TO.
 
+import { botReason } from './_guard.js';
+
 const esc = (s = '') =>
   String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 const LEAD_TO = 'gkochuk@moldsciencetechnologies.com';
-const MIN_FILL_MS = 2500; // a human cannot read the form and submit faster than this
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { name, company, email, phone, human, _gotcha, _started } = req.body || {};
+  const { name, company, email, phone, human } = req.body || {};
 
-  // --- bot gates -----------------------------------------------------------
-  // 1. honeypot: a hidden field only an automated filler would populate
-  if (_gotcha) return res.status(200).json({ ok: true }); // pretend success
-  // 2. submission speed
-  const started = Number(_started);
-  if (started && Date.now() - started < MIN_FILL_MS) {
+  // --- bot gates (see _guard.js) — fake success so the bot learns nothing ---
+  const reason = botReason(req);
+  if (reason) {
+    console.warn('get-app: blocked bot submission', reason);
     return res.status(200).json({ ok: true });
   }
-  // 3. the explicit "I am not a robot" confirmation
   if (!human) return res.status(400).json({ error: 'Please confirm you are not a robot.' });
 
   if (!name || !company || !email || !phone) {

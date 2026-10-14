@@ -2,25 +2,22 @@
 // Required env: RESEND_API_KEY, MAIL_FROM (verified sender, e.g. "MoldScience Website <noreply@moldsciencetechnologies.com>")
 // Optional env: MAIL_TO (defaults to info@moldsciencetechnologies.com)
 
+import { botReason } from './_guard.js';
+
 const esc = (s = '') =>
   String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-
-const MIN_FILL_MS = 2500; // a human cannot read the form and submit faster than this
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { firstName, lastName, email, phone, company, topic, message, human, _gotcha, _started } = req.body || {};
+  const { firstName, lastName, email, phone, company, topic, message, human } = req.body || {};
 
-  // --- bot gates (same three as /api/get-app) --------------------------------
-  // 1. honeypot: a hidden field only an automated filler would populate
-  if (_gotcha) return res.status(200).json({ ok: true }); // pretend success
-  // 2. submission speed
-  const started = Number(_started);
-  if (started && Date.now() - started < MIN_FILL_MS) {
+  // --- bot gates (see _guard.js) — fake success so the bot learns nothing ---
+  const reason = botReason(req);
+  if (reason) {
+    console.warn('contact: blocked bot submission', reason);
     return res.status(200).json({ ok: true });
   }
-  // 3. the explicit "I am not a robot" confirmation
   if (!human) return res.status(400).json({ error: 'Please confirm you are not a robot.' });
 
   if (!firstName || !lastName || !email || !message) {

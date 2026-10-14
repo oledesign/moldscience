@@ -17,6 +17,11 @@ document.querySelectorAll('form[data-async]').forEach((form) => {
     const status = form.querySelector('.form-status');
     const data = Object.fromEntries(new FormData(form).entries());
     if (data._gotcha) return; // honeypot
+    // Anti-bot proof: _started was stamped at page load; _token is derived from
+    // it here, at submit time, so neither a scraped copy of the HTML nor a
+    // direct API post can reproduce the pair. Must stay in sync with api/_guard.js.
+    data._started = form.dataset.t0;
+    data._token = tok(data._started);
     btn.disabled = true;
     const label = btn.textContent;
     btn.textContent = 'Sending…';
@@ -49,8 +54,17 @@ document.querySelectorAll('form[data-async]').forEach((form) => {
   });
 });
 
-// Stamp when the form became available. The API rejects submissions that arrive
-// implausibly fast, which catches scripted fillers without troubling a human.
-document.querySelectorAll('form[data-async] input[name="_started"]').forEach((el) => {
-  el.value = String(Date.now());
+// Stamp when each form became available. The API rejects submissions that
+// arrive implausibly fast (or without the stamp at all), which catches
+// scripted fillers without troubling a human.
+document.querySelectorAll('form[data-async]').forEach((form) => {
+  form.dataset.t0 = String(Date.now());
 });
+
+// Must stay in sync with tokenFor() in api/_guard.js.
+function tok(started) {
+  const s = 'msct:' + started;
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+  return h.toString(36);
+}
